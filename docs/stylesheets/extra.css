@@ -1,0 +1,46 @@
+/* Iron Man Inspired Light Theme */
+[data-md-color-scheme="ironman"] {
+    --md-primary-fg-color: #D32F2F; /* Iron Man Red */
+    --md-accent-fg-color: #FFC107;  /* Iron Man Gold */
+    --md-default-fg-color: #263238; /* Primary Text */
+    --md-default-bg-color: #FFFFFF; /* Background */
+    --md-default-fg-color--light: hsla(4, 89%, 58%, 0.54);   /* Light Iron Man Red */
+    --md-default-fg-color--lighter: hsla(4, 89%, 58%, 0.32); /* Lighter Iron Man Red */
+    --md-default-fg-color--lightest: hsla(4, 89%, 58%, 0.07);/* Lightest Iron Man Red */
+    --md-default-bg-color--light: hsla(45, 100%, 85%, 0.7);  /* Light Gold */
+    --md-default-bg-color--lighter: hsla(45, 100%, 85%, 0.3);/* Lighter Gold */
+    --md-default-bg-color--lightest: hsla(45, 100%, 85%, 0.12);/* Lightest Gold */
+}
+
+/* Iron Man Inspired Dark Theme */
+[data-md-color-scheme="ironman-dark"] {
+    --md-primary-fg-color: #9A0007; /* Darker Iron Man Red */
+    --md-accent-fg-color: #FFC107;  /* Iron Man Gold */
+    --md-default-fg-color: #ECEFF1; /* Primary Text */
+    --md-default-bg-color: #263238; /* Background */
+    --md-default-fg-color--light: hsla(4, 89%, 75%, 0.87);   /* Light Iron Man Red for Dark Mode */
+    --md-default-fg-color--lighter: hsla(4, 89%, 75%, 0.65); /* Lighter Iron Man Red for Dark Mode */
+    --md-default-fg-color--lightest: hsla(4, 89%, 75%, 0.45);/* Lightest Iron Man Red for Dark Mode */
+    --md-default-bg-color--light: hsla(45, 30%, 20%, 0.7);  /* Dark Gold for Dark Mode */
+    --md-default-bg-color--lighter: hsla(45, 30%, 20%, 0.5);/* Darker Gold for Dark Mode */
+    --md-default-bg-color--lightest: hsla(45, 30%, 20%, 0.3);/* Darkest Gold for Dark Mode */
+}
+
+/* Custom Styling for Headers, Links, etc. */
+.md-typeset a {
+  color: var(--md-accent-fg-color);
+}
+
+.md-typeset h1, .md-typeset h2, .md-typeset h3 {
+  color: var(--md-primary-fg-color);
+}
+
+.md-nav__title {
+  color: var(--md-accent-fg-color);
+  font-weight: bold;
+}
+
+.md-footer {
+  background-color: var(--md-primary-fg-color);
+  color: var(--md-default-bg-color);
+}
