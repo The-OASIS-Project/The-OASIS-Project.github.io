@@ -1,7 +1,7 @@
 /* Iron Man Inspired Light Theme */
 [data-md-color-scheme="ironman"] {
-    --md-primary-fg-color: #D32F2F; /* Iron Man Red */
-    --md-accent-fg-color: #FFC107;  /* Iron Man Gold */
+    --md-primary-fg-color: #9A0007; /* Iron Man Red */
+    --md-accent-fg-color: #f09000;  /* Iron Man Gold */
     --md-default-fg-color: #263238; /* Primary Text */
     --md-default-bg-color: #FFFFFF; /* Background */
     --md-default-fg-color--light: hsla(4, 89%, 58%, 0.54);   /* Light Iron Man Red */
@@ -14,7 +14,7 @@
 
 /* Iron Man Inspired Dark Theme */
 [data-md-color-scheme="ironman-dark"] {
-    --md-primary-fg-color: #9A0007; /* Darker Iron Man Red */
+    --md-primary-fg-color: #9A0007; /* Iron Man Red */
     --md-accent-fg-color: #FFC107;  /* Iron Man Gold */
     --md-default-fg-color: #ECEFF1; /* Primary Text */
     --md-default-bg-color: #263238; /* Background */
@@ -40,7 +40,35 @@
   font-weight: bold;
 }
 
+.md-header {
+  background-color: var(--md-primary-fg-color);
+  color: var(--md-default-bg-color);
+  max-height: 120px;
+}
+
+.md-header__title {
+  font-size: 32px;
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
+}
+
 .md-footer {
   background-color: var(--md-primary-fg-color);
   color: var(--md-default-bg-color);
+}
+
+html {
+  font-size: 20px;
+}
+
+.md-nav {
+  font-size: .8rem;
+  line-height: 1.3;
+}
+
+.md-header__button.md-logo img {
+  height: 100px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
 }
