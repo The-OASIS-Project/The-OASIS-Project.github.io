@@ -88,5 +88,7 @@ markdown_extensions:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
+repo_url: https://github.com/The-OASIS-Project/
+
 copyright: |
   &copy; 2024 <a href="https://github.com/KerseyFabrications"  target="_blank" rel="noopener">Kersey Fabrications</a>

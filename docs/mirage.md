@@ -1,6 +1,6 @@
 # M.I.R.A.G.E. - Multi-Input Reconnaissance and Guidance Environment (Heads-Up Display)
 
-<img src="/assets/screenshot_gtc.png" alt="HORIZON HUD" width="800" />
+<img src="/assets/screenshot_gtc.png" alt="MIRAGE HUD" width="800" />
 
 ## Application Notes
 
@@ -39,7 +39,7 @@ The following hardware is what was used to create the original helmet.
 
 ### Displays
 
-<img src="/assets/horizon_display_inside.png" alt="HORIZON Displays" width="400" align="left" />
+<img src="/assets/horizon_display_inside.png" alt="MIRAGE Displays" width="400" align="left" />
 
 * Wisecoco 2.9 Inch 2880*1440 2K Dual LCD Screen For VR AR Headset Windows Mixed Reality Display 120hz DP to MIPI Driver Board
 
@@ -59,7 +59,7 @@ The following hardware is what was used to create the original helmet.
 
 ### Cameras
 
-<img src="/assets/horizon_display_front.png" alt="HORIZON Cameras" width="400" align="right" />
+<img src="/assets/horizon_display_front.png" alt="MIRAGE Cameras" width="400" align="right" />
 
 * Arducam Mini 12.3MP HQ Camera - IMX477 (x2)
 
@@ -110,18 +110,18 @@ sudo apt upgrade
 6. Update user permissions.
     1. Add groups to user: `dialout`
 
-## Build HORIZON
+## Build MIRAGE
 
 1. `mkdir build`
 2. `cd build`
 3. `cmake ..`
 4. `make`
 
-## HORIZON Configuration
+## MIRAGE Configuration
 
-Welcome to the HORIZON Configuration Guide! The HORIZON UI is designed with flexibility at its core, allowing for a fully customizable experience through the `config.json` file. This powerful feature enables the integration of both static and animated graphics, text customization (including font and size), and the addition of unique elements positioned precisely with x/y coordinates and scaling. Moreover, UI elements can be effortlessly toggled on or off with the use of hotkeys and voice commands. While the current configuration offers a broad range of features, we anticipate further enhancements as more users engage with the system. Your feedback is crucial to perfecting the HORIZON experience.
+Welcome to the MIRAGE Configuration Guide! The MIRAGE UI is designed with flexibility at its core, allowing for a fully customizable experience through the `config.json` file. This powerful feature enables the integration of both static and animated graphics, text customization (including font and size), and the addition of unique elements positioned precisely with x/y coordinates and scaling. Moreover, UI elements can be effortlessly toggled on or off with the use of hotkeys and voice commands. While the current configuration offers a broad range of features, we anticipate further enhancements as more users engage with the system. Your feedback is crucial to perfecting the MIRAGE experience.
 
-The `config.json` file uses JSON, a straightforward and versatile format, to organize the HORIZON UI's settings. It's designed to be user-friendly, allowing for easy tweaks to the look and functionality of the UI. JSON structures the configuration details in a clear way, enabling you to adjust everything from screen layout to interactive features with minimal fuss. This approach combines accessibility with the flexibility needed for precise customization, making it manageable for both technical and less technical users alike.
+The `config.json` file uses JSON, a straightforward and versatile format, to organize the MIRAGE UI's settings. It's designed to be user-friendly, allowing for easy tweaks to the look and functionality of the UI. JSON structures the configuration details in a clear way, enabling you to adjust everything from screen layout to interactive features with minimal fuss. This approach combines accessibility with the flexibility needed for precise customization, making it manageable for both technical and less technical users alike.
 
 **Note:** Due to some rapid coding, many of the settings are case sensitive. This may change in the future but you have been warned.
 
@@ -129,7 +129,7 @@ The `config.json` file uses JSON, a straightforward and versatile format, to org
 
 #### Example Global Section
 
-Below is an example of a Global section in the configuration file. This section outlines the primary settings for the HORIZON UI, such as dimensions, paths for resources, and specific functionalities:
+Below is an example of a Global section in the configuration file. This section outlines the primary settings for the MIRAGE UI, such as dimensions, paths for resources, and specific functionalities:
 
 ```json
 {
@@ -158,7 +158,7 @@ Below is an example of a Global section in the configuration file. This section 
 }
 ```
 
-The "Global" section of the `config.json` file is your command center for setting up the foundational aspects of the HORIZON UI. Here's a breakdown to help you configure the system to its maximum potential:
+The "Global" section of the `config.json` file is your command center for setting up the foundational aspects of the MIRAGE UI. Here's a breakdown to help you configure the system to its maximum potential:
 
 * **`Height` & `Width`:** Set the default height and width (`1440` pixels) for each eye of the UI display. This establishes the canvas size on which all UI elements will be placed.
 
@@ -182,15 +182,15 @@ The "Global" section of the `config.json` file is your command center for settin
 
 * **Armor Notice Placement & Timeout:** Fine-tune the positioning and display duration of armor-related notifications with `Armor notice dest_x`, `Armor notice dest_y`, `Armor notice dest_w`, `Armor notice dest_h`, and `Armor notice timeout`. These settings ensure critical information is prominently and timely displayed.
 
-This section is foundational to the overall operation of the HORIZON UI, providing essential settings that affect the display, performance, and functionality of the system. By customizing these parameters, you can tailor the HORIZON experience to meet your specific needs and preferences.
+This section is foundational to the overall operation of the MIRAGE UI, providing essential settings that affect the display, performance, and functionality of the system. By customizing these parameters, you can tailor the MIRAGE experience to meet your specific needs and preferences.
 
 ### Elements Section
 
-The "Elements" section of the `config.json` file specifies the individual UI components that make up the HORIZON interface. These elements can be anything from animated graphics, static images, and text labels to special components defined in the software. Each element is defined by a set of properties that determine its appearance, behavior, and placement within the UI.
+The "Elements" section of the `config.json` file specifies the individual UI components that make up the MIRAGE interface. These elements can be anything from animated graphics, static images, and text labels to special components defined in the software. Each element is defined by a set of properties that determine its appearance, behavior, and placement within the UI.
 
 #### Types of Elements
 
-There are several types of elements you can include in the HORIZON UI, each serving a unique function:
+There are several types of elements you can include in the MIRAGE UI, each serving a unique function:
 
 * **`intro`:** Used for the animated introduction presented at application startup.
 ```json
@@ -289,7 +289,7 @@ Certain properties are shared across all (or most) types of elements, allowing f
 
 While many properties are universal, some are specific to certain element types, allowing for more detailed customization:
 
-* **`special` element:** In the HORIZON UI, "special" elements are dynamic components designed to display real-time information and interactive data, each identified by a unique `name`. Here’s a breakdown of these elements:
+* **`special` element:** In the MIRAGE UI, "special" elements are dynamic components designed to display real-time information and interactive data, each identified by a unique `name`. Here’s a breakdown of these elements:
     * **`altitude`:** Shows how high the user is, useful for applications needing elevation data.
     * **`pitch`:** Displays the tilt angle of the device, crucial for maintaining orientation in navigation or remote-controlled operations.
     * **`heading`:** Provides directional information, helping users to navigate by showing which way they’re facing relative to magnetic north.

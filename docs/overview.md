@@ -43,7 +43,7 @@ Looking for J.A.R.V.I.S. or F.R.I.D.A.Y. integration? This is my A.I. assistant.
 
 If I needed a place to store something and it doesn't fit in elsewhere, it goes here. Things like helpful scripts, etc.
 
-### H.O.R.I.Z.O.N. - Holographic Overlay Reconnaissance Interface: Zeroed-in Optical Navigation (Heads-Up Display)
+### M.I.R.A.G.E. - Multi-Input Reconnaissance and Guidance Environment (Heads-Up Display)
 
 [MIRAGE on GitHub](https://github.com/The-OASIS-Project/mirage)
 
