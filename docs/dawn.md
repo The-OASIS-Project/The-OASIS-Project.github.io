@@ -11,6 +11,9 @@
 
 ## Installation Notes (Required Software)
 
+### System Packages
+1. `sudo apt install libssl-dev`
+
 ### Cmake 3.27.1
 1. `tar xvf cmake-3.27.1.tar.gz`
 2. `cd cmake-3.27.1`
@@ -35,28 +38,14 @@ Before we begin:
 4. `./configure --prefix=/usr`
 5. `make -j8 src/espeak-ng src/speak-ng`
 6. `make`
-7. `# make docs` - Skip? bash: no: command not found
-8. `sudo make LIBDIR=/usr/lib/aarch64-linux-gnu install`
+7. `sudo make LIBDIR=/usr/lib/aarch64-linux-gnu install`
 
 ### Onnxruntime (git)
 1. `git clone --recursive https://github.com/microsoft/onnxruntime`
 2. `cd onnxruntime`
-3. `./build.sh --use_cuda --cudnn_home /usr/local/cuda-11.4 --cuda_home  /usr/local/cuda-11.4 --config MinSizeRel --update --build --parallel --build_shared_lib`
-4. Needed? - `./build.sh --use_cuda --cudnn_home /usr/local/cuda-11.4 --cuda_home  /usr/local/cuda-11.4 --config MinSizeRel --enable_pybind --parallel --build_wheel`
-    
-    At this point, one test fails but it doesn't appear to be fatal to us.
-    ```
-    67% tests passed, 1 tests failed out of 3
-    
-    Total Test time (real) = 342.80 sec
-    
-    The following tests FAILED:
-    1 - onnxruntime_test_all (Failed)
-    ```
-
-5. `sudo cp -a build/Linux/MinSizeRel/libonnxruntime.so* /usr/local/lib/`
-6. `sudo mkdir -p /usr/local/include/onnxruntime`
-7. `sudo cp include/onnxruntime/core/session/*.h /usr/local/include/onnxruntime`
+3. `./build.sh --config Release --use_cuda --cuda_home /usr/local/cuda-12.2 --cudnn_home /usr/lib/aarch64-linux-gnu --build_shared_lib --skip_tests --parallel $(nproc) --arm`
+4. `cd build/Linux/Release/`
+5. `sudo make install`
 
 ### piper-phonemize (git)
 1. `git clone https://github.com/rhasspy/piper-phonemize.git`
@@ -67,13 +56,10 @@ Before we begin:
 4. `cmake ..`
 5. `make`
 6. `sudo make install`
-7. Needed? - `make python`
 
 ### piper (git)
 1. `git clone https://github.com/rhasspy/piper.git`
 2. `cd piper`
-    1. `vim src/cpp/CMakeLists.txt`
-    2. Add `/usr/local/include/onnxruntime` and `/usr/local/include/piper-phonemize` to `target_include_directories`
 3. `make` - You'll get some errors on copies at the end but it builds.
 
 ### kaldi (git) (This is a REALLY long build process!)
@@ -93,7 +79,7 @@ Before we begin:
 14. `cd vosk-api/src`
 15. `KALDI_ROOT=/opt/kaldi make -j8`
 16. `cd ../c`
-17. Edit Makefile. Add the following to LDFLAGS: `$(shell pkg-config --libs cuda-11.4 cudart-11.4) -lcusparse -lcublas -lcusolver -lcurand`
+17. Edit Makefile. Add the following to LDFLAGS: `$(shell pkg-config --libs cuda-12.2 cudart-12.2) -lcusparse -lcublas -lcusolver -lcurand`
     1. `make`
 18. Choose a model:
     1. `wget https://alphacephei.com/vosk/models/vosk-model-small-en-us-0.15.zip`

@@ -39,8 +39,9 @@ nav:
   - A.U.R.A.: aura.md
   - S.P.A.R.K.: spark.md
   - Communications: comms.md
+  - Local LLMs: llm.md
   - B.E.A.C.O.N. Parts Catalog: beacon.md
-  - Open Source and Special Thanks: opensource.md
+  - Special Thanks: opensource.md
   - Credits: credits.md
   #- Blog: blog/index.md
 

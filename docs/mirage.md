@@ -83,12 +83,7 @@ sudo apt update
 sudo apt upgrade
 ```
 2. Install necessary packages.
-`sudo apt-get install cmake libudev-dev libxext-dev libwebp-dev libpulse-dev libvorbis-dev libjson-c-dev libsamplerate-dev libfreetype6-dev libcurl4-openssl-dev nvidia-jetpack libmosquitto-dev mosquitto libsndfile-dev`
-
-3. Manually install the latest SDL libraries. (Actually the distro ones should work now.)
-    * SDL2 (latest 2.28.2)
-    * SDL2_image (latest 2.6.3)
-    * SDL2_ttf (latest 2.20.2)
+`sudo apt-get install cmake libudev-dev libxext-dev libwebp-dev libpulse-dev libvorbis-dev libjson-c-dev libsamplerate-dev libfreetype6-dev libcurl4-openssl-dev nvidia-jetpack libmosquitto-dev mosquitto libsndfile-dev libsdl2-dev libsdl2-ttf-dev libsdl2-image-dev libgd-dev`
 
 4. Setup IO (Cameras, SPI)
     1. `sudo /opt/nvidia/jetson-io/jetson-io.py`
