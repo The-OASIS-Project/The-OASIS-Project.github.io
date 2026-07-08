@@ -1,0 +1,187 @@
+/* ============================================================
+ * Layout — Container, section, and grid utilities
+ * ============================================================ */
+
+.container {
+   width: 100%;
+   max-width: var(--container-max);
+   margin-inline: auto;
+   padding-inline: var(--space-lg);
+}
+
+.container--wide {
+   max-width: var(--container-wide);
+}
+
+.container--narrow {
+   max-width: var(--container-narrow);
+}
+
+/* Page sections with consistent vertical rhythm */
+.section {
+   padding-block: var(--space-4xl);
+}
+
+.section--alt {
+   background-color: var(--color-bg-secondary);
+}
+
+.section--dark {
+   background-color: var(--color-bg-primary);
+}
+
+/* Flexbox utilities */
+.flex {
+   display: flex;
+}
+
+.flex-col {
+   flex-direction: column;
+}
+
+.flex-wrap {
+   flex-wrap: wrap;
+}
+
+.items-center {
+   align-items: center;
+}
+
+.justify-center {
+   justify-content: center;
+}
+
+.justify-between {
+   justify-content: space-between;
+}
+
+.gap-sm {
+   gap: var(--space-sm);
+}
+
+.gap-md {
+   gap: var(--space-md);
+}
+
+.gap-lg {
+   gap: var(--space-lg);
+}
+
+.gap-xl {
+   gap: var(--space-xl);
+}
+
+.gap-2xl {
+   gap: var(--space-2xl);
+}
+
+/* CSS Grid layouts */
+.grid {
+   display: grid;
+   gap: var(--space-xl);
+}
+
+.grid-2 {
+   grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+   grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+   grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-6 {
+   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Two-column content layout (text + image) */
+.two-col {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: var(--space-3xl);
+   align-items: center;
+}
+
+/* Buttons */
+.btn {
+   display: inline-flex;
+   align-items: center;
+   gap: var(--space-sm);
+   padding: 0.75rem 1.75rem;
+   border-radius: var(--radius-sm);
+   font-family: var(--font-mono);
+   font-weight: 500;
+   font-size: var(--text-sm);
+   letter-spacing: 0.08em;
+   text-transform: uppercase;
+   transition:
+      background var(--transition-base),
+      transform var(--transition-fast),
+      box-shadow var(--transition-base),
+      border-color var(--transition-base),
+      color var(--transition-base);
+   text-decoration: none;
+}
+
+.btn:hover {
+   transform: translateY(-2px);
+}
+
+/* Primary — arc-reactor cyan (the interface) */
+.btn--cyan {
+   background: var(--color-cyan);
+   color: #041016;
+   box-shadow: var(--glow-cyan-md);
+}
+.btn--cyan:hover {
+   background: var(--color-cyan-core);
+   color: #041016;
+   box-shadow: var(--glow-cyan-lg);
+}
+
+/* Secondary armor-tinted */
+.btn--gold {
+   background: var(--gradient-gold-cta);
+   color: #0d0d0d;
+}
+.btn--gold:hover {
+   box-shadow: var(--glow-gold);
+   color: #0d0d0d;
+}
+
+.btn--outline {
+   border: 1px solid var(--color-border-hover);
+   color: var(--color-cyan);
+   background: var(--color-cyan-faint);
+}
+.btn--outline:hover {
+   border-color: var(--color-cyan);
+   color: var(--color-cyan-core);
+   box-shadow: var(--glow-cyan-md);
+}
+
+.btn--red {
+   background: var(--gradient-red-accent);
+   color: #041016;
+}
+.btn--red:hover {
+   box-shadow: var(--glow-cyan-md);
+}
+
+/* Image placeholders */
+.img-placeholder {
+   background: var(--color-bg-tertiary);
+   border: 2px dashed var(--color-gold);
+   border-radius: var(--radius-md);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: var(--color-text-secondary);
+   font-size: var(--text-sm);
+   min-height: 200px;
+   padding: var(--space-lg);
+   text-align: center;
+}

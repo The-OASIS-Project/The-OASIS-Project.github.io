@@ -1,0 +1,57 @@
+/* ============================================================
+ * Responsive — Mobile-first breakpoints
+ * ============================================================ */
+
+/* Tablet and below (< 768px) */
+@media (max-width: 768px) {
+   .grid-2,
+   .grid-3,
+   .grid-4 {
+      grid-template-columns: 1fr;
+   }
+
+   .two-col {
+      grid-template-columns: 1fr;
+      gap: var(--space-xl);
+   }
+
+   .section {
+      padding-block: var(--space-2xl);
+   }
+
+   .container {
+      padding-inline: var(--space-md);
+   }
+
+   h1 {
+      font-size: var(--text-3xl);
+   }
+   h2 {
+      font-size: var(--text-2xl);
+   }
+   h3 {
+      font-size: var(--text-xl);
+   }
+
+   .hide-mobile {
+      display: none !important;
+   }
+}
+
+/* Tablet landscape (768px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+   .grid-4 {
+      grid-template-columns: repeat(2, 1fr);
+   }
+
+   .grid-3 {
+      grid-template-columns: repeat(2, 1fr);
+   }
+}
+
+/* Desktop helpers */
+@media (min-width: 769px) {
+   .hide-desktop {
+      display: none !important;
+   }
+}

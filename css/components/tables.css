@@ -1,0 +1,70 @@
+/* ============================================================
+ * Tables — Hardware specs, comparison tables
+ * ============================================================ */
+
+.spec-table-wrapper {
+   overflow-x: auto;
+   border-radius: var(--radius-lg);
+   border: 1px solid var(--color-border);
+}
+
+.spec-table {
+   width: 100%;
+   border-collapse: collapse;
+   font-size: var(--text-sm);
+}
+
+.spec-table thead {
+   background: var(--color-bg-tertiary);
+}
+
+.spec-table th {
+   padding: var(--space-md) var(--space-lg);
+   text-align: left;
+   font-weight: 600;
+   color: var(--color-text-primary);
+   white-space: nowrap;
+   border-bottom: 1px solid var(--color-border);
+}
+
+.spec-table td {
+   padding: var(--space-md) var(--space-lg);
+   color: var(--color-text-secondary);
+   border-bottom: 1px solid var(--color-border);
+}
+
+.spec-table tbody tr:last-child td {
+   border-bottom: none;
+}
+
+.spec-table tbody tr:hover {
+   background: rgba(255, 255, 255, 0.02);
+}
+
+.spec-table .highlight-cell {
+   color: var(--color-gold);
+   font-weight: 600;
+}
+
+.spec-table .tag {
+   display: inline-block;
+   padding: 0.15em 0.6em;
+   border-radius: var(--radius-sm);
+   font-size: var(--text-xs);
+   font-weight: 600;
+}
+
+.spec-table .tag--primary {
+   background: var(--color-cyan-dim);
+   color: var(--color-cyan);
+}
+
+.spec-table .tag--secondary {
+   background: rgba(255, 182, 62, 0.15);
+   color: var(--color-gold);
+}
+
+.spec-table .tag--muted {
+   background: rgba(255, 255, 255, 0.05);
+   color: var(--color-text-secondary);
+}

@@ -1,0 +1,99 @@
+/* ============================================================
+ * Modern CSS Reset
+ * Based on Josh Comeau's + Andy Bell's resets
+ * ============================================================ */
+
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+html {
+   -moz-text-size-adjust: none;
+   -webkit-text-size-adjust: none;
+   text-size-adjust: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+   html {
+      scroll-behavior: smooth;
+   }
+}
+
+/* On-brand keyboard focus indicator (HUD cyan). Applies to links, buttons,
+   the hamburger, and the video placeholders (role=button, tabindex). */
+:focus-visible {
+   outline: 2px solid var(--color-cyan);
+   outline-offset: 2px;
+   border-radius: var(--radius-sm);
+}
+/* Mirror the card hover reticle on keyboard focus */
+.card:focus-visible::before,
+.card:focus-visible::after {
+   opacity: 0.9;
+}
+
+body {
+   min-height: 100vh;
+   line-height: var(--line-height-normal);
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+   display: block;
+   max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+   font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   text-wrap: balance;
+}
+
+a {
+   color: inherit;
+   text-decoration: none;
+}
+
+ul,
+ol {
+   list-style: none;
+}
+
+button {
+   cursor: pointer;
+   border: none;
+   background: none;
+}
+
+table {
+   border-collapse: collapse;
+}

@@ -1,0 +1,103 @@
+/* ============================================================
+ * Video Grid — Responsive YouTube embeds with lazy loading
+ * ============================================================ */
+
+.video-grid {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: var(--space-xl);
+}
+
+.video-card {
+   background: var(--color-bg-card);
+   border: 1px solid var(--color-border);
+   border-radius: var(--radius-lg);
+   overflow: hidden;
+   transition: border-color var(--transition-base);
+}
+
+.video-card:hover {
+   border-color: var(--color-border-hover);
+}
+
+.video-card__embed {
+   position: relative;
+   padding-bottom: 56.25%; /* 16:9 */
+   height: 0;
+   overflow: hidden;
+}
+
+.video-card__embed iframe,
+.video-card__embed .video-placeholder {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   border: 0;
+}
+
+/* Lazy load thumbnail placeholder */
+.video-placeholder {
+   background: var(--color-bg-tertiary);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+   position: relative;
+}
+
+.video-placeholder__thumb {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+.video-placeholder__play {
+   position: absolute;
+   width: 68px;
+   height: 48px;
+   background: rgba(0, 0, 0, 0.8);
+   border-radius: var(--radius-lg);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   transition: background var(--transition-fast);
+}
+
+.video-placeholder:hover .video-placeholder__play {
+   background: var(--color-red);
+}
+
+.video-placeholder__play::after {
+   content: '';
+   display: block;
+   width: 0;
+   height: 0;
+   border-style: solid;
+   border-width: 10px 0 10px 18px;
+   border-color: transparent transparent transparent white;
+   margin-left: 3px;
+}
+
+.video-card__info {
+   padding: var(--space-md) var(--space-lg);
+}
+
+.video-card__title {
+   font-size: var(--text-base);
+   font-weight: 600;
+   color: var(--color-text-primary);
+}
+
+.video-card__desc {
+   font-size: var(--text-sm);
+   color: var(--color-text-secondary);
+   margin-top: var(--space-xs);
+}
+
+@media (max-width: 768px) {
+   .video-grid {
+      grid-template-columns: 1fr;
+   }
+}

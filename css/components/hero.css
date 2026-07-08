@@ -1,0 +1,282 @@
+/* ============================================================
+ * Hero — "inside the visor"
+ * The landing hero is a live HUD frame: a holographic armor
+ * render on a pedestal, real MIRAGE gauge sprites, an Arame
+ * headline, and a monospace boot line that types on load.
+ * ============================================================ */
+
+.hero {
+   position: relative;
+   overflow: hidden;
+}
+
+/* ---- Landing HUD hero ---- */
+.hero--hud {
+   min-height: 100vh;
+   display: flex;
+   align-items: center;
+   padding-top: calc(var(--header-height) + var(--space-2xl));
+   padding-bottom: var(--space-3xl);
+   background: var(--gradient-hero);
+}
+
+/* faint HUD grid + floor glow */
+.hero--hud .hero__grid {
+   position: absolute;
+   inset: 0;
+   background-image: linear-gradient(var(--color-cyan-faint) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-cyan-faint) 1px, transparent 1px);
+   background-size: 56px 56px;
+   mask-image: radial-gradient(120% 80% at 50% 35%, #000 0%, transparent 75%);
+   -webkit-mask-image: radial-gradient(120% 80% at 50% 35%, #000 0%, transparent 75%);
+   z-index: 0;
+}
+.hero--hud .hero__glow {
+   position: absolute;
+   left: 50%;
+   bottom: -10%;
+   width: 90vw;
+   max-width: 1100px;
+   height: 60vh;
+   transform: translateX(-50%);
+   background: radial-gradient(ellipse at center, rgba(53, 208, 245, 0.16) 0%, transparent 68%);
+   z-index: 0;
+   pointer-events: none;
+}
+
+.hero__inner {
+   position: relative;
+   z-index: 1;
+   display: grid;
+   grid-template-columns: 1.15fr 0.85fr;
+   align-items: center;
+   gap: var(--space-3xl);
+   width: 100%;
+}
+
+.hero__text {
+   max-width: 640px;
+}
+
+.hero__title {
+   font-family: var(--font-display);
+   line-height: 0.98;
+   letter-spacing: 0.01em;
+   color: var(--color-text-heading);
+   margin-bottom: var(--space-lg);
+}
+.hero__title-main {
+   display: block;
+   font-size: clamp(3.5rem, 8vw, 7rem);
+   font-weight: 700;
+   color: var(--color-text-heading);
+   letter-spacing: 0.08em;
+   text-shadow: 0 0 34px rgba(53, 208, 245, 0.3);
+}
+.hero__title-lead {
+   display: block;
+   font-family: var(--font-mono);
+   font-size: clamp(0.85rem, 1.6vw, 1.1rem);
+   font-weight: 500;
+   letter-spacing: 0.24em;
+   text-transform: uppercase;
+   color: var(--color-cyan);
+   text-shadow: var(--glow-cyan-sm);
+   margin-top: 0.6em;
+}
+
+/* typed boot line */
+.hero__boot {
+   font-family: var(--font-mono);
+   font-size: var(--text-sm);
+   color: var(--color-cyan);
+   letter-spacing: 0.04em;
+   margin-bottom: var(--space-lg);
+   min-height: 1.4em;
+   text-shadow: var(--glow-cyan-sm);
+}
+.hero__boot-cursor {
+   display: inline-block;
+   animation: hudCaret 1s steps(1) infinite;
+}
+@keyframes hudCaret {
+   50% {
+      opacity: 0;
+   }
+}
+
+.hero__subtitle {
+   font-family: var(--font-body);
+   font-size: var(--text-hero-sub);
+   color: var(--color-text-secondary);
+   line-height: var(--line-height-normal);
+   max-width: 560px;
+   margin-bottom: var(--space-2xl);
+}
+
+.hero__actions {
+   display: flex;
+   gap: var(--space-md);
+   flex-wrap: wrap;
+}
+
+/* ---- The holographic stage ---- */
+.hero__stage {
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   min-height: 520px;
+}
+.hero__armor {
+   position: relative;
+   z-index: 2;
+   width: 100%;
+   max-width: 360px;
+   height: auto;
+   filter: drop-shadow(0 0 40px rgba(53, 208, 245, 0.4));
+   animation: heroFloat 7s ease-in-out infinite;
+}
+@keyframes heroFloat {
+   0%,
+   100% {
+      transform: translateY(0);
+   }
+   50% {
+      transform: translateY(-5px);
+   }
+}
+
+/* Real suit reticle centered on the armor's core, panning side to side */
+.hero__reticle {
+   position: absolute;
+   z-index: 3;
+   width: 330px;
+   height: auto;
+   left: 50%;
+   top: 46%;
+   transform: translate(-50%, -50%);
+   filter: drop-shadow(var(--glow-cyan-sm));
+   transform-origin: center;
+   animation: heroReticlePan 6s ease-in-out infinite;
+}
+@keyframes heroReticlePan {
+   0%,
+   100% {
+      transform: translate(-50%, -50%) rotate(-16deg);
+   }
+   50% {
+      transform: translate(-50%, -50%) rotate(16deg);
+   }
+}
+
+/* floating telemetry chips around the armor */
+.hero__chip {
+   position: absolute;
+   z-index: 4;
+   font-family: var(--font-mono);
+   font-size: 0.66rem;
+   letter-spacing: 0.12em;
+   text-transform: uppercase;
+   color: var(--color-cyan);
+   text-shadow: var(--glow-cyan-sm);
+   padding: 0.35em 0.6em;
+   border: 1px solid var(--color-border);
+   background: var(--color-panel);
+   backdrop-filter: blur(3px);
+   -webkit-backdrop-filter: blur(3px);
+   white-space: nowrap;
+}
+.hero__chip b {
+   color: var(--color-cyan-core);
+   font-weight: 500;
+}
+.hero__chip--power {
+   top: 20%;
+   right: -4%;
+}
+.hero__chip--core {
+   bottom: 24%;
+   left: -6%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+   .hero__armor,
+   .hero__reticle {
+      animation: none;
+   }
+   .hero__reticle {
+      transform: translate(-50%, -50%);
+   }
+   .hero__boot-cursor {
+      animation: none;
+   }
+}
+
+/* ---- Page hero (non-landing subpages) ---- */
+.page-hero {
+   position: relative;
+   padding-top: calc(var(--header-height) + var(--space-3xl));
+   padding-bottom: var(--space-2xl);
+   text-align: center;
+   background: var(--gradient-hero);
+   border-bottom: 1px solid var(--color-border);
+   overflow: hidden;
+}
+.page-hero::after {
+   content: '';
+   position: absolute;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   height: 1px;
+   background: linear-gradient(90deg, transparent, var(--color-cyan), transparent);
+   opacity: 0.5;
+   box-shadow: var(--glow-cyan-sm);
+}
+.page-hero__title {
+   font-family: var(--font-display);
+   font-size: clamp(2rem, 5vw, 3.4rem);
+   letter-spacing: 0.02em;
+   margin-bottom: var(--space-md);
+   color: var(--color-text-heading);
+}
+.page-hero__subtitle {
+   font-size: var(--text-lg);
+   color: var(--color-text-secondary);
+   max-width: 620px;
+   margin-inline: auto;
+}
+
+@media (max-width: 900px) {
+   .hero__inner {
+      grid-template-columns: 1fr;
+      gap: var(--space-2xl);
+      text-align: center;
+   }
+   .hero__text {
+      margin-inline: auto;
+   }
+   .hero__subtitle {
+      margin-inline: auto;
+   }
+   .hero__actions {
+      justify-content: center;
+   }
+   .hero__stage {
+      order: -1;
+      min-height: 380px;
+   }
+   .hero__chip {
+      display: none;
+   }
+}
+
+@media (max-width: 480px) {
+   .hero__armor {
+      max-width: 240px;
+   }
+   .hero__stage {
+      min-height: 300px;
+   }
+}

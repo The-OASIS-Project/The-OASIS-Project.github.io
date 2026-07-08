@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en" data-page="mirage">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="referrer" content="strict-origin-when-cross-origin" />
+      <meta
+         http-equiv="Content-Security-Policy"
+         content="default-src 'self'; img-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; frame-src https://www.youtube-nocookie.com; object-src 'none'; base-uri 'none'; form-action 'none'"
+      />
+      <title>MIRAGE — Heads-Up Display | The OASIS Project</title>
+      <meta
+         name="description"
+         content="MIRAGE: Dual-display AR heads-up display built for cosplay helmets. Up to 16 user-configurable HUD screens, hardware video encoding, and AI vision."
+      />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="The OASIS Project" />
+      <meta property="og:url" content="https://www.oasisproject.net/mirage.html" />
+      <meta property="og:title" content="MIRAGE — Heads-Up Display | The OASIS Project" />
+      <meta property="og:description" content="MIRAGE: Dual-display AR heads-up display built for cosplay helmets. Up to 16 user-configurable HUD screens, hardware video encoding, and AI vision." />
+      <meta property="og:image" content="https://www.oasisproject.net/assets/images/setup_on_table.png" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+      <link rel="stylesheet" href="css/main.css" />
+      <script>document.documentElement.classList.add('js');</script>
+   </head>
+   <body>
+      <div id="header"></div>
+
+      <main>
+         <!-- Hero -->
+         <section class="page-hero">
+            <div class="container">
+               <h1 class="page-hero__title reveal fade-up">M.I.R.A.G.E.</h1>
+               <p class="page-hero__subtitle reveal fade-up">
+                  Multi-Input Reconnaissance and Guidance Environment.<br />A heads-up display you can actually wear.
+               </p>
+            </div>
+         </section>
+
+         <!-- Overview -->
+         <section class="section">
+            <div class="container container--narrow">
+               <div class="reveal fade-up">
+                  <h2 class="section-title">Overview</h2>
+                  <p>
+                     I built MIRAGE as a dual- or split-display AR heads-up display for cosplay helmets — though it's
+                     portable to plenty of other uses. It renders real-time HUD elements — gauges, compass, pitch ladder,
+                     maps, sprites, and live text — onto small displays with passthrough camera video for see-through
+                     operation.
+                  </p>
+                  <p>
+                     The system runs on NVIDIA Jetson or Raspberry Pi, using SDL2 for hardware-accelerated rendering.
+                     All HUD elements are defined in plain-text configuration files with hot-reload — no code changes
+                     needed to redesign the entire display layout.
+                  </p>
+               </div>
+            </div>
+         </section>
+
+         <!-- HUD Elements -->
+         <section class="section section--alt">
+            <div class="container">
+               <div class="feature reveal fade-up">
+                  <div class="feature__content">
+                     <span class="feature__label">Display</span>
+                     <h2 class="feature__title">HUD Elements</h2>
+                     <p class="feature__text">
+                        Over 25 HUD element types render real-time data from sensors, GPS, system metrics, and AI
+                        state directly onto the display.
+                     </p>
+                     <ul class="feature__list">
+                        <li>Analog and digital gauges with animated needles</li>
+                        <li>Compass rose with bearing indicator</li>
+                        <li>Pitch ladder with horizon line</li>
+                        <li>Mini-map with GPS position</li>
+                        <li>Animated sprites and transitions</li>
+                        <li>Dynamic text with sensor data binding</li>
+                        <li>Battery level, CPU/GPU temp, network status</li>
+                     </ul>
+                  </div>
+                  <div class="feature__visual">
+                     <img
+                        src="assets/images/screenshot_gtc.png"
+                        alt="MIRAGE HUD render — gauges, compass, radar, and AI vision overlay (stereoscopic view)"
+                        style="width: 100%; border-radius: var(--radius-lg); aspect-ratio: 16/9; object-fit: cover"
+                        loading="lazy"
+                     />
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <!-- Multi-HUD Screens -->
+         <section class="section">
+            <div class="container">
+               <div class="feature feature--reverse reveal fade-up">
+                  <div class="feature__content">
+                     <span class="feature__label">Screens</span>
+                     <h2 class="feature__title">Up to 16 HUD Layouts</h2>
+                     <p class="feature__text">
+                        Switch between up to 16 possible HUD layouts, all user-configurable, with animated transitions.
+                        Each screen is a configuration file that defines element positions, data bindings, and visual
+                        style.
+                     </p>
+                     <ul class="feature__list">
+                        <li>Voice-switchable — ask DAWN to change the HUD, hands-free</li>
+                        <li>Combat, navigation, diagnostics, and custom layouts</li>
+                        <li>Animated transitions between screens</li>
+                        <li>Hot-reload — edit config, see changes instantly</li>
+                        <li>Per-screen color themes and opacity</li>
+                     </ul>
+                  </div>
+                  <div class="feature__visual">
+                     <div class="hud-grid">
+                        <img src="assets/images/hud-primary.jpg" alt="MIRAGE HUD — primary flight layout" class="hud-thumb" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: var(--radius-md)" loading="lazy" />
+                        <img src="assets/images/hud-armor.jpg" alt="MIRAGE HUD — armor scan layout" class="hud-thumb" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: var(--radius-md)" loading="lazy" />
+                        <img src="assets/images/hud-enviro.jpg" alt="MIRAGE HUD — environment layout" class="hud-thumb" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: var(--radius-md)" loading="lazy" />
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <!-- Recording & Streaming -->
+         <section class="section section--alt">
+            <div class="container">
+               <div class="feature reveal fade-up">
+                  <div class="feature__content">
+                     <span class="feature__label">Capture</span>
+                     <h2 class="feature__title">Recording &amp; Live Streaming</h2>
+                     <p class="feature__text">
+                        H.264 encoding captures the HUD output in real time — hardware-accelerated on Jetson, or software
+                        encoding on other hosts. Record locally, stream to YouTube Live, or do both at once; with
+                        hardware encoding it runs at full framerate with minimal CPU overhead.
+                     </p>
+                     <ul class="feature__list">
+                        <li>Hardware (NVENC / V4L2) or software (x264) H.264 encoding</li>
+                        <li>Simultaneous record + stream</li>
+                        <li>YouTube Live RTMP streaming</li>
+                        <li>Configurable bitrate and resolution</li>
+                     </ul>
+                  </div>
+                  <div class="feature__visual">
+                     <img
+                        src="assets/images/mirage-hud-scene.jpg"
+                        alt="First-person view through the helmet — the MIRAGE HUD composited over a real street scene"
+                        style="width: 100%; border-radius: var(--radius-lg); aspect-ratio: 16/9; object-fit: cover"
+                        loading="lazy"
+                     />
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <!-- AI Vision -->
+         <section class="section">
+            <div class="container">
+               <div class="feature feature--reverse reveal fade-up">
+                  <div class="feature__content">
+                     <span class="feature__label">AI</span>
+                     <h2 class="feature__title">AI Vision Integration</h2>
+                     <p class="feature__text">
+                        MIRAGE can capture snapshots from the helmet camera and send them to DAWN for LLM-powered visual
+                        analysis. Ask your AI assistant what it sees — from the inside of the helmet.
+                     </p>
+                     <ul class="feature__list">
+                        <li>Snapshot capture from helmet camera feed</li>
+                        <li>Forwarded to DAWN's vision API for analysis</li>
+                        <li>Results displayed on HUD or spoken via TTS</li>
+                     </ul>
+                  </div>
+                  <div class="feature__visual">
+                     <img
+                        src="assets/images/screenshot_gtc.png"
+                        alt="MIRAGE HUD with DAWN's AI vision analysis describing the scene (stereoscopic view)"
+                        style="width: 100%; border-radius: var(--radius-lg); aspect-ratio: 16/9; object-fit: cover"
+                        loading="lazy"
+                     />
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <!-- Hardware & Configuration -->
+         <section class="section section--alt">
+            <div class="container container--narrow">
+               <h2 class="section-title section-title--center reveal fade-up">Hardware</h2>
+               <p class="section-subtitle section-subtitle--center reveal fade-up">
+                  Small displays with passthrough camera video, driven by Jetson or Raspberry Pi.
+               </p>
+
+               <div class="spec-table-wrapper reveal fade-up" style="margin-top: var(--space-2xl)">
+                  <table class="spec-table">
+                     <thead>
+                        <tr>
+                           <th scope="col">Component</th>
+                           <th scope="col">Recommendation</th>
+                           <th scope="col">Notes</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td class="highlight-cell">Display</td>
+                           <td>Horizon HUD displays (dual)</td>
+                           <td>Passthrough camera video, one per eye</td>
+                        </tr>
+                        <tr>
+                           <td>Compute</td>
+                           <td>Jetson Orin Nano / RPi 5</td>
+                           <td>Jetson for recording + streaming</td>
+                        </tr>
+                        <tr>
+                           <td>Camera</td>
+                           <td>CSI or USB camera module</td>
+                           <td>For AI vision snapshots</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+
+               <div class="reveal fade-up" style="text-align: center; margin-top: var(--space-2xl)">
+                  <a
+                     href="https://github.com/The-OASIS-Project/mirage"
+                     class="btn btn--cyan"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     >View MIRAGE on GitHub</a
+                  >
+               </div>
+            </div>
+         </section>
+      </main>
+
+      <div id="footer"></div>
+
+      <script src="js/hud.js"></script>
+      <script src="js/nav.js"></script>
+      <script src="js/components.js"></script>
+      <script src="js/animations.js"></script>
+   </body>
+</html>

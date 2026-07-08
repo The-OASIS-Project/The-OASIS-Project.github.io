@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en" data-page="index">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="referrer" content="strict-origin-when-cross-origin" />
+      <meta
+         http-equiv="Content-Security-Policy"
+         content="default-src 'self'; img-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; frame-src https://www.youtube-nocookie.com; object-src 'none'; base-uri 'none'; form-action 'none'"
+      />
+      <title>The OASIS Project — Open Armor Systems Integrated Suite</title>
+      <meta
+         name="description"
+         content="Iron Man-inspired tech for your home and your (cosplay) armor. DAWN is a real, open-source JARVIS — natural-voice AI that runs your smart home and powers a full HUD suit, all on hardware you own."
+      />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="The OASIS Project" />
+      <meta property="og:url" content="https://www.oasisproject.net/" />
+      <meta property="og:title" content="The OASIS Project — Iron Man-Inspired Tech for Your Home and Armor" />
+      <meta property="og:description" content="Iron Man-inspired tech for your home and your (cosplay) armor. DAWN is a real, open-source JARVIS — natural-voice AI that runs your smart home and powers a full HUD suit, all on hardware you own." />
+      <meta property="og:image" content="https://www.oasisproject.net/assets/images/setup_on_table.png" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+      <link rel="stylesheet" href="css/main.css" />
+      <script>document.documentElement.classList.add('js');</script>
+   </head>
+   <body>
+      <div id="header"></div>
+
+      <main>
+         <!-- Hero — inside the visor -->
+         <section class="hero hero--hud">
+            <div class="hero__grid" aria-hidden="true"></div>
+            <div class="hero__glow" aria-hidden="true"></div>
+            <div class="container hero__inner">
+               <div class="hero__text">
+                  <p class="hud-eyebrow">OASIS//NET · System Online</p>
+                  <h1 class="hero__title">
+                     <span class="hero__title-main">OASIS</span>
+                     <span class="hero__title-lead">Open Armor Systems Integrated Suite</span>
+                  </h1>
+                  <p class="hero__boot"><span id="hero-boot"></span><span class="hero__boot-cursor">▊</span></p>
+                  <p class="hero__subtitle">
+                     Iron Man-inspired tech for your <strong>home</strong> and your <strong>(cosplay) armor</strong>.
+                     DAWN is a real, open-source JARVIS — one natural-voice AI that runs your whole home and comes with
+                     you when you suit up. Built for real life, not a movie.
+                  </p>
+                  <div class="hero__actions">
+                     <a href="dawn.html" class="btn btn--cyan">Explore DAWN</a>
+                     <a
+                        href="https://github.com/The-OASIS-Project"
+                        class="btn btn--outline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >View on GitHub</a
+                     >
+                  </div>
+               </div>
+               <div class="hero__stage" aria-hidden="true">
+                  <img
+                     src="assets/hud/armor-holo.png"
+                     alt="Holographic render of the OASIS armor"
+                     class="hero__armor"
+                     loading="eager"
+                  />
+                  <img src="assets/hud/reticle.png" alt="" class="hero__reticle" loading="eager" />
+                  <span class="hero__chip hero__chip--power">PWR <b>100%</b> · ARC STABLE</span>
+                  <span class="hero__chip hero__chip--core">DAWN CORE <b>ONLINE</b></span>
+               </div>
+            </div>
+         </section>
+
+         <!-- What is OASIS? -->
+         <section class="section section--alt">
+            <div class="container">
+               <div class="two-col reveal fade-up">
+                  <div>
+                     <h2 class="section-title">What is OASIS?</h2>
+                     <p>
+                        OASIS is my attempt to build a real-life JARVIS — one open-source AI that runs your home and,
+                        if you build it, a working Iron Man suit. At the center is <strong>DAWN</strong>, a
+                        natural-voice assistant wrapped in sensors, a heads-up display, and wireless hardware that all
+                        runs on machines you own.
+                     </p>
+                     <p>
+                        I built every piece of the software myself, from the ground up. It runs on NVIDIA Jetson and
+                        Raspberry Pi, and the whole stack is GPLv3 — from the voice assistant to the HUD renderer to
+                        the repulsor firmware.
+                     </p>
+                     <a href="about.html" class="btn btn--outline" style="margin-top: var(--space-md)"
+                        >Read the full story →</a
+                     >
+                  </div>
+                  <div class="feature__visual">
+                     <img
+                        src="assets/images/setup_on_table.png"
+                        alt="OASIS helmet and hardware setup on workbench"
+                        style="aspect-ratio: 4/3; object-fit: cover"
+                        loading="lazy"
+                     />
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <!-- Meet DAWN (flagship spotlight) -->
+         <section class="section">
+            <div class="container">
+               <div class="feature reveal fade-up">
+                  <div class="feature__content">
+                     <span class="feature__label">The flagship</span>
+                     <h2 class="feature__title">Meet DAWN — your own JARVIS/FRIDAY</h2>
+                     <p class="feature__text">
+                        One natural-voice AI that listens, reasons, calls tools, and remembers you — running entirely on
+                        hardware you own. It runs your whole home — smart devices, calendar, music, and more — and comes
+                        with you into the OASIS suit when you wear it. No cloud account, no subscription, nothing leaving
+                        your house. The closest thing to a real JARVIS or FRIDAY that actually exists.
+                     </p>
+                     <ul class="feature__list">
+                        <li><strong>20+ built-in tools</strong> — calendar, email, smart home, music, memory, messaging, and more</li>
+                        <li><strong>Remembers you</strong> — the people and preferences that matter, across every conversation</li>
+                        <li><strong>In every room</strong> — Raspberry Pi &amp; ESP32 voice satellites</li>
+                        <li><strong>Cloud-optional</strong> — runs fully offline on a single Jetson, or connect cloud services if you prefer</li>
+                     </ul>
+                     <div style="margin-top: var(--space-md); display: flex; gap: var(--space-md); flex-wrap: wrap">
+                        <a href="dawn.html" class="btn btn--cyan">Explore DAWN</a>
+                        <a
+                           href="https://github.com/The-OASIS-Project/dawn"
+                           class="btn btn--outline"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           >Get it on GitHub</a
+                        >
+                     </div>
+                  </div>
+                  <div class="feature__visual">
+                     <img
+                        src="assets/images/dawn-webui-tools.jpg"
+                        alt="DAWN WebUI — a conversation with tool calls and debug output visible"
+                        style="width: 100%; height: auto; border-radius: var(--radius-lg); display: block"
+                        loading="lazy"
+                     />
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <!-- DAWN proof / stats strip -->
+         <section class="section section--alt" style="padding-block: var(--space-2xl)">
+            <div class="container">
+               <div class="stat-strip reveal fade-up">
+                  <div class="stat-readout">
+                     <div class="stat-readout__num">20+</div>
+                     <div class="stat-readout__label">built-in tools</div>
+                  </div>
+                  <div class="stat-readout">
+                     <div class="stat-readout__num">100%</div>
+                     <div class="stat-readout__label">runs local — cloud optional</div>
+                  </div>
+                  <div class="stat-readout">
+                     <div class="stat-readout__num">0</div>
+                     <div class="stat-readout__label">telemetry · tracking · phone-home</div>
+                  </div>
+                  <div class="stat-readout">
+                     <div class="stat-readout__num">GPLv3</div>
+                     <div class="stat-readout__label">free &amp; open source</div>
+                  </div>
+               </div>
+               <p class="reveal fade-up" style="text-align: center; color: var(--color-text-secondary); margin-top: var(--space-xl); font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 0.08em">
+                  MULTI-PROVIDER LLM · OPENAI / CLAUDE / GEMINI / OPENROUTER / FULLY LOCAL · DEMONSTRATED AT NVIDIA GTC 2024
+               </p>
+            </div>
+         </section>
+
+         <!-- Component Showcase -->
+         <section class="section">
+            <div class="container">
+               <h2 class="section-title section-title--center reveal fade-up">DAWN is the brain. Here's the body.</h2>
+               <p class="section-subtitle section-subtitle--center reveal fade-up">
+                  Six more open components — HUD, sensors, telemetry, comms, hand, and chassis. Every piece (DAWN
+                  included) is its own independent project: each runs perfectly well stand-alone, and they combine
+                  into a full suit when you bring them together.
+               </p>
+
+               <div class="grid grid-3 stagger" style="margin-top: var(--space-2xl)">
+                  <a href="mirage.html" class="card reveal fade-up">
+                     <img src="assets/images/MIRAGE_Logo_bg.png" alt="MIRAGE" class="card__logo" />
+                     <span class="card__acronym">MIRAGE</span>
+                     <h3 class="card__title">Heads-Up Display</h3>
+                     <p class="card__text">
+                        Dual-display AR with a live camera passthrough plus gauges, compass, maps, and up to 16 switchable HUD screens. Hardware H.264
+                        encoding for recording and live streaming.
+                     </p>
+                     <span class="card__link">Learn more</span>
+                  </a>
+
+                  <a href="components.html#stat" class="card reveal fade-up">
+                     <img src="assets/images/STAT_Logo_bg.png" alt="STAT" class="card__logo" />
+                     <span class="card__acronym">STAT</span>
+                     <h3 class="card__title">Telemetry Daemon</h3>
+                     <p class="card__text">
+                        Host-system telemetry for the machine running DAWN — CPU/GPU load and temperature, memory,
+                        power draw, and battery. Publishes over MQTT; Python GUI for real-time visualization.
+                     </p>
+                     <span class="card__link">Learn more</span>
+                  </a>
+
+                  <a href="components.html#echo" class="card reveal fade-up">
+                     <img src="assets/images/echo-comms.png" alt="ECHO" class="card__logo" />
+                     <span class="card__acronym">ECHO</span>
+                     <h3 class="card__title">Cellular Daemon</h3>
+                     <p class="card__text">
+                        SIM7600G-H modem daemon. Routes phone calls and SMS to DAWN with multi-segment text support
+                        and inbound ringtone notifications.
+                     </p>
+                     <span class="card__link">Learn more</span>
+                  </a>
+
+                  <a href="components.html#aura" class="card reveal fade-up">
+                     <img src="assets/images/AURA_Logo_bg.png" alt="AURA" class="card__logo" />
+                     <span class="card__acronym">AURA</span>
+                     <h3 class="card__title">Helmet Sensors</h3>
+                     <p class="card__text">
+                        ESP32-S3 sensor suite: 9-DOF IMU, GPS, CO2, air quality, temperature, and humidity. FreeRTOS
+                        with servo-controlled faceplate.
+                     </p>
+                     <span class="card__link">Learn more</span>
+                  </a>
+
+                  <a href="components.html#spark" class="card reveal fade-up">
+                     <img src="assets/images/SPARK_Logo_bg.png" alt="SPARK" class="card__logo" />
+                     <span class="card__acronym">SPARK</span>
+                     <h3 class="card__title">Armor &amp; Repulsors</h3>
+                     <p class="card__text">
+                        The armor's gauntlet firmware — gesture control, repulsor LED effects, wireless, and
+                        audio-synced sound — plus monitoring of the armor's own battery and temperature, reported to
+                        the HUD.
+                     </p>
+                     <span class="card__link">Learn more</span>
+                  </a>
+
+                  <a href="components.html#beacon" class="card reveal fade-up">
+                     <img src="assets/images/BEACON_Logo_bg.png" alt="BEACON" class="card__logo" />
+                     <span class="card__acronym">BEACON</span>
+                     <h3 class="card__title">CAD Library</h3>
+                     <p class="card__text">
+                        Full 3D printable parts library for the suit build. Enclosures, mounts, display chassis, and
+                        structural components. Free STL downloads.
+                     </p>
+                     <span class="card__link">Learn more</span>
+                  </a>
+               </div>
+            </div>
+         </section>
+
+         <!-- Featured Video -->
+         <section class="section section--alt">
+            <div class="container container--narrow">
+               <h2 class="section-title section-title--center reveal fade-up">See It in Action</h2>
+               <div class="video-card reveal fade-up" style="margin-top: var(--space-xl)">
+                  <div class="video-card__embed">
+                     <div class="video-placeholder" onclick="loadVideo(this, '0bnFI3myK7Y')">
+                        <img
+                           src="assets/images/thumbs/0bnFI3myK7Y.jpg"
+                           alt="GTC 2024 Walkthrough"
+                           class="video-placeholder__thumb"
+                           loading="lazy"
+                        />
+                        <div class="video-placeholder__play"></div>
+                     </div>
+                  </div>
+                  <div class="video-card__info">
+                     <h3 class="video-card__title">Working Iron Man Helmet Walk-around: NVIDIA GTC 2024</h3>
+                     <p class="video-card__desc">
+                        Me walking through the helmet at NVIDIA's GTC — DAWN, MIRAGE, and the rest of the OASIS stack,
+                        running live.
+                     </p>
+                  </div>
+               </div>
+               <p class="reveal fade-up" style="text-align: center; margin-top: var(--space-xl)">
+                  <span style="display: inline-block; padding: 0.2em 0.7em; border-radius: var(--radius-sm); font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; background: var(--color-cyan-faint); color: var(--color-cyan)">Coming soon</span>
+                  <span style="color: var(--color-text-secondary); margin-left: var(--space-sm)">The DAWN announcement video</span>
+               </p>
+            </div>
+         </section>
+
+         <!-- Get Involved -->
+         <section class="section">
+            <div class="container">
+               <h2 class="section-title section-title--center reveal fade-up">Get Involved</h2>
+               <div class="grid grid-3 stagger" style="margin-top: var(--space-2xl)">
+                  <div class="card reveal fade-up" style="text-align: center">
+                     <img src="assets/images/contribute.png" alt="" class="card__badge" aria-hidden="true" />
+                     <h3 class="card__title">Contribute</h3>
+                     <p class="card__text">
+                        Every component is GPLv3. Fork a repo, send a PR, or open an issue — I read them.
+                     </p>
+                     <a
+                        href="https://github.com/The-OASIS-Project"
+                        class="btn btn--outline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style="margin-top: var(--space-sm)"
+                        >GitHub</a
+                     >
+                  </div>
+
+                  <div class="card reveal fade-up" style="text-align: center">
+                     <img src="assets/images/follow.png" alt="" class="card__badge" aria-hidden="true" />
+                     <h3 class="card__title">Connect</h3>
+                     <p class="card__text">
+                        Join the Discord to talk shop, or follow build logs, demos, and new videos on Instagram, X,
+                        and YouTube.
+                     </p>
+                     <div
+                        style="
+                           margin-top: var(--space-sm);
+                           display: flex;
+                           gap: var(--space-sm);
+                           justify-content: center;
+                           flex-wrap: wrap;
+                        "
+                     >
+                        <a
+                           href="https://discord.gg/qTF3PdMR9M"
+                           class="btn btn--outline"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           >Discord</a
+                        >
+                        <a
+                           href="https://www.instagram.com/kerseyfabs"
+                           class="btn btn--outline"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           >Instagram</a
+                        >
+                     </div>
+                  </div>
+
+                  <div class="card reveal fade-up" style="text-align: center">
+                     <img src="assets/images/support.png" alt="" class="card__badge" aria-hidden="true" />
+                     <h3 class="card__title">Support</h3>
+                     <p class="card__text">
+                        It's just me building this. Patreon helps me buy the hardware and keep the lights on.
+                     </p>
+                     <a
+                        href="https://www.patreon.com/c/KerseyFabrications"
+                        class="btn btn--outline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style="margin-top: var(--space-sm)"
+                        >Patreon</a
+                     >
+                  </div>
+               </div>
+            </div>
+         </section>
+      </main>
+
+      <div id="footer"></div>
+
+      <script src="js/hud.js"></script>
+      <script src="js/nav.js"></script>
+      <script src="js/components.js"></script>
+      <script src="js/animations.js"></script>
+      <script src="js/video.js"></script>
+      <script>
+         // Type the hero boot line once
+         (function () {
+            var el = document.getElementById('hero-boot');
+            if (!el) return;
+            var line = '> Initializing DAWN framework · JARVIS-class assistant online';
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+               el.textContent = line;
+               return;
+            }
+            var i = 0;
+            (function type() {
+               if (i <= line.length) {
+                  el.textContent = line.slice(0, i++);
+                  setTimeout(type, 32);
+               }
+            })();
+         })();
+      </script>
+   </body>
+</html>

@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en" data-page="components">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="referrer" content="strict-origin-when-cross-origin" />
+      <meta
+         http-equiv="Content-Security-Policy"
+         content="default-src 'self'; img-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; frame-src https://www.youtube-nocookie.com; object-src 'none'; base-uri 'none'; form-action 'none'"
+      />
+      <title>Components — STAT, ECHO, AURA, SPARK, BEACON | The OASIS Project</title>
+      <meta
+         name="description"
+         content="The hardware and firmware components of the OASIS ecosystem: host telemetry, cellular daemon, sensor suite, armor and repulsor firmware, and CAD library."
+      />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="The OASIS Project" />
+      <meta property="og:url" content="https://www.oasisproject.net/components.html" />
+      <meta property="og:title" content="Components — STAT, ECHO, AURA, SPARK, BEACON | The OASIS Project" />
+      <meta property="og:description" content="The hardware and firmware components of the OASIS ecosystem: host telemetry, cellular daemon, sensor suite, armor and repulsor firmware, and CAD library." />
+      <meta property="og:image" content="https://www.oasisproject.net/assets/images/setup_on_table.png" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+      <link rel="stylesheet" href="css/main.css" />
+      <script>document.documentElement.classList.add('js');</script>
+   </head>
+   <body>
+      <div id="header"></div>
+
+      <main>
+         <!-- Hero -->
+         <section class="page-hero">
+            <div class="container">
+               <h1 class="page-hero__title reveal fade-up">Components</h1>
+               <p class="page-hero__subtitle reveal fade-up">
+                  The hardware and firmware I built to empower DAWN.
+               </p>
+            </div>
+         </section>
+
+         <!-- STAT -->
+         <section class="component-section section" id="stat">
+            <div class="container">
+               <div class="component-header reveal fade-up">
+                  <div class="component-header__acronym">S.T.A.T.</div>
+                  <h2 class="component-header__title">System Telemetry and Analytics Tracker</h2>
+                  <p class="component-header__subtitle">
+                     Real-time power monitoring and system telemetry for the machine running DAWN.
+                  </p>
+               </div>
+
+               <div class="feature reveal fade-up">
+                  <div class="feature__content">
+                     <p class="feature__text">
+                        STAT is the telemetry daemon for the host system — the computer running DAWN. It monitors that
+                        machine's power, battery, and system health, supports multiple sensor ICs, and streams over MQTT
+                        to the HUD and web dashboard.
+                     </p>
+                     <ul class="feature__list">
+                        <li>
+                           <strong>Power Sensors:</strong> INA238, INA3221, Daly BMS — voltage, current, power for every
+                           rail
+                        </li>
+                        <li>
+                           <strong>Battery Charge:</strong> Chemistry-aware state-of-charge estimation (LiPo, Li-Ion,
+                           LiFePO4)
+                        </li>
+                        <li><strong>System Metrics:</strong> CPU usage, memory, and fan speed</li>
+                        <li><strong>MQTT Telemetry:</strong> Publishes structured JSON telemetry over MQTT for the HUD and other components</li>
+                        <li><strong>Python GUI:</strong> Real-time visualization dashboard for bench testing</li>
+                     </ul>
+                  </div>
+                  <div class="feature__visual">
+                     <img
+                        src="assets/images/STAT_Logo_bg.png"
+                        alt="STAT — System Telemetry and Analytics Tracker"
+                        style="width: 100%; border-radius: var(--radius-lg); aspect-ratio: 1/1; object-fit: cover"
+                        loading="lazy"
+                     />
+                  </div>
+               </div>
+
+               <div style="margin-top: var(--space-xl); text-align: center" class="reveal fade-up">
+                  <a
+                     href="https://github.com/The-OASIS-Project/stat"
+                     class="btn btn--outline"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     >STAT on GitHub</a
+                  >
+               </div>
+            </div>
+         </section>
+
+         <!-- ECHO -->
+         <section class="component-section section section--alt" id="echo">
+            <div class="container">
+               <div class="component-header reveal fade-up">
+                  <div class="component-header__acronym">E.C.H.O.</div>
+                  <h2 class="component-header__title">Enhanced Cellular Handling Operations</h2>
+                  <p class="component-header__subtitle">
+                     The suit's link to the outside world — phone calls and SMS, routed straight into DAWN.
+                  </p>
+               </div>
+
+               <div class="feature feature--reverse reveal fade-up">
+                  <div class="feature__content">
+                     <p class="feature__text">
+                        ECHO is a standalone daemon for the Waveshare SIM7600G-H 4G modem. It owns the serial port,
+                        handles all AT command traffic, and bridges the cellular world to the rest of OASIS via
+                        MQTT. DAWN subscribes for incoming calls and SMS, surfacing them as part of the same
+                        conversation surface as the voice assistant.
+                     </p>
+                     <ul class="feature__list">
+                        <li>
+                           <strong>Phone calls:</strong> Dial, answer, hang up, DTMF tones, full call state
+                           tracking
+                        </li>
+                        <li>
+                           <strong>SMS:</strong> Send and receive with full Unicode and emoji (UCS2), multi-segment
+                           concatenation, AT command injection prevention
+                        </li>
+                        <li>
+                           <strong>Telemetry:</strong> Signal strength, network registration, operator, call state
+                           — published every 10 seconds
+                        </li>
+                        <li>
+                           <strong>Health monitoring:</strong> Heartbeat checks, modem lost / reconnected events
+                        </li>
+                        <li>
+                           <strong>Rate limiting:</strong> built-in caps on calls and texts to guard against runaway loops or accidental spam
+                        </li>
+                        <li>
+                           <strong>Hardware:</strong> Two-way call audio bridged over the modem's USB PCM interface
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="feature__visual">
+                     <img
+                        src="assets/images/echo-comms.png"
+                        alt="ECHO cellular communications"
+                        style="width: 100%; border-radius: var(--radius-lg); aspect-ratio: 1/1; object-fit: cover"
+                        loading="lazy"
+                     />
+                  </div>
+               </div>
+
+               <div style="margin-top: var(--space-xl); text-align: center" class="reveal fade-up">
+                  <a
+                     href="https://github.com/The-OASIS-Project/echo"
+                     class="btn btn--outline"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     >ECHO on GitHub</a
+                  >
+               </div>
+            </div>
+         </section>
+
+         <!-- AURA -->
+         <section class="component-section section" id="aura">
+            <div class="container">
+               <div class="component-header reveal fade-up">
+                  <div class="component-header__acronym">A.U.R.A.</div>
+                  <h2 class="component-header__title">Advanced Utility for Reliable Acquisition</h2>
+                  <p class="component-header__subtitle">
+                     The helmet's senses — environmental awareness and faceplate control.
+                  </p>
+               </div>
+
+               <div class="feature reveal fade-up">
+                  <div class="feature__content">
+                     <p class="feature__text">
+                        AURA is an ESP32-S3 sensor suite mounted inside the helmet, now on its v2.5 hardware revision. It continuously monitors
+                        environmental conditions and user orientation, feeding data to DAWN and to MIRAGE for the
+                        HUD.
+                     </p>
+                     <ul class="feature__list">
+                        <li>
+                           <strong>9-DOF IMU:</strong> Accelerometer, gyroscope, magnetometer — heading, pitch, roll
+                        </li>
+                        <li><strong>GPS:</strong> Position, speed, altitude for HUD compass and map</li>
+                        <li><strong>CO2 Sensor:</strong> Inside-helmet CO2 concentration monitoring</li>
+                        <li>
+                           <strong>Air Quality:</strong> VOC, particulate matter for environmental awareness
+                        </li>
+                        <li><strong>Temp/Humidity:</strong> Inside-helmet climate monitoring</li>
+                        <li>
+                           <strong>Servo Faceplate:</strong> Motorized open/close with smooth acceleration
+                        </li>
+                        <li><strong>TFT Display:</strong> Local status display on helmet exterior</li>
+                        <li><strong>FreeRTOS:</strong> Real-time task scheduling for sensor fusion</li>
+                     </ul>
+                  </div>
+                  <div class="feature__visual">
+                     <img
+                        src="assets/images/AURA_Logo_bg.png"
+                        alt="AURA sensor suite"
+                        style="width: 100%; border-radius: var(--radius-lg); aspect-ratio: 1/1; object-fit: cover"
+                        loading="lazy"
+                     />
+                  </div>
+               </div>
+
+               <div style="margin-top: var(--space-xl); text-align: center" class="reveal fade-up">
+                  <a
+                     href="https://github.com/The-OASIS-Project/aura"
+                     class="btn btn--outline"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     >AURA on GitHub</a
+                  >
+               </div>
+            </div>
+         </section>
+
+         <!-- SPARK -->
+         <section class="component-section section section--alt" id="spark">
+            <div class="container">
+               <div class="component-header reveal fade-up">
+                  <div class="component-header__acronym">S.P.A.R.K.</div>
+                  <h2 class="component-header__title">Sensor-based Positioning and Actuation Repulsor Kinetics</h2>
+                  <p class="component-header__subtitle">The armor and repulsors — effects, gestures, and armor monitoring.</p>
+               </div>
+
+               <div class="feature feature--reverse reveal fade-up">
+                  <div class="feature__content">
+                     <p class="feature__text">
+                        SPARK is the firmware for the armor and its repulsors. It handles gesture detection, LED
+                        repulsor animations, wireless communication with the helmet, and audio-synced repulsor sound —
+                        and it monitors the charge and temperature of every armor component, reporting to the HUD.
+                     </p>
+                     <ul class="feature__list">
+                        <li>
+                           <strong>Gesture Detection:</strong> IMU-based hand position and motion recognition
+                        </li>
+                        <li>
+                           <strong>19-LED Repulsors:</strong> Individually addressable LEDs with charge-up, fire, and
+                           idle animations
+                        </li>
+                        <li>
+                           <strong>Wireless:</strong> WiFi over ESP-NOW for low-latency control and data
+                        </li>
+                        <li><strong>Audio Integration:</strong> Synchronized repulsor sound effects</li>
+                        <li><strong>Armor Telemetry:</strong> Charge and temperature of every armor component, reported to the MIRAGE HUD</li>
+                     </ul>
+                  </div>
+                  <div class="feature__visual">
+                     <img
+                        src="assets/images/SPARK_Logo_bg.png"
+                        alt="SPARK — Sensor-based Positioning and Actuation Repulsor Kinetics"
+                        style="width: 100%; border-radius: var(--radius-lg); aspect-ratio: 1/1; object-fit: cover"
+                        loading="lazy"
+                     />
+                  </div>
+               </div>
+
+               <div style="margin-top: var(--space-xl); text-align: center" class="reveal fade-up">
+                  <a
+                     href="https://github.com/The-OASIS-Project/spark"
+                     class="btn btn--outline"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     >SPARK on GitHub</a
+                  >
+               </div>
+            </div>
+         </section>
+
+         <!-- BEACON -->
+         <section class="component-section section" id="beacon">
+            <div class="container">
+               <div class="component-header reveal fade-up">
+                  <div class="component-header__acronym">B.E.A.C.O.N.</div>
+                  <h2 class="component-header__title">Blueprint Engineering And Component Organizational Nexus</h2>
+                  <p class="component-header__subtitle">
+                     Free 3D-printable components to help integrate OASIS into your suit.
+                  </p>
+               </div>
+
+               <div class="feature reveal fade-up">
+                  <div class="feature__content">
+                     <p class="feature__text">
+                        BEACON is a CAD library containing a subset of free 3D-printable components to help you
+                        integrate OASIS hardware into your own suit build. HUD display mounts, speaker housings, Jetson
+                        sling harness, and more — designed for FDM and resin printing.
+                     </p>
+                     <ul class="feature__list">
+                        <li>STL files for select hardware enclosures and mounts</li>
+                        <li>Designed for standard FDM and resin printers</li>
+                        <li>Reference renders included for each component</li>
+                     </ul>
+                  </div>
+                  <div class="feature__visual">
+                     <img
+                        src="assets/images/BEACON_Logo_bg.png"
+                        alt="BEACON — Blueprint Engineering And Component Organizational Nexus"
+                        style="width: 100%; border-radius: var(--radius-lg); aspect-ratio: 1/1; object-fit: cover"
+                        loading="lazy"
+                     />
+                  </div>
+               </div>
+
+               <div style="margin-top: var(--space-xl); text-align: center" class="reveal fade-up">
+                  <a
+                     href="https://github.com/The-OASIS-Project/beacon"
+                     class="btn btn--outline"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     >BEACON on GitHub</a
+                  >
+               </div>
+            </div>
+         </section>
+      </main>
+
+      <div id="footer"></div>
+
+      <script src="js/hud.js"></script>
+      <script src="js/nav.js"></script>
+      <script src="js/components.js"></script>
+      <script src="js/animations.js"></script>
+   </body>
+</html>

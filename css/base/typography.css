@@ -1,0 +1,130 @@
+/* ============================================================
+ * Typography — System font stack, heading scale, prose styles
+ * ============================================================ */
+
+body {
+   font-family: var(--font-body);
+   font-size: var(--text-base);
+   color: var(--color-text-primary);
+   background-color: var(--color-bg-primary);
+   /* Aldrich + Source Sans ship limited weights; use the nearest real weight
+      instead of an ugly synthesized bold when a heavier weight is requested. */
+   font-synthesis: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-family: var(--font-heading);
+   color: var(--color-text-heading);
+   line-height: var(--line-height-tight);
+   font-weight: 400; /* Aldrich ships a single weight; 700 would faux-bold */
+   letter-spacing: 0.005em;
+}
+
+h1 {
+   font-size: var(--text-4xl);
+}
+h2 {
+   font-size: var(--text-3xl);
+}
+h3 {
+   font-size: var(--text-2xl);
+}
+h4 {
+   font-size: var(--text-xl);
+}
+
+p {
+   line-height: var(--line-height-loose);
+   color: var(--color-text-secondary);
+}
+
+p + p {
+   margin-top: var(--space-md);
+}
+
+a {
+   color: var(--color-cyan);
+   transition: color var(--transition-fast);
+}
+
+a:hover {
+   color: var(--color-cyan-core);
+}
+
+strong {
+   color: var(--color-text-primary);
+   font-weight: 600;
+}
+
+code {
+   font-family: var(--font-mono);
+   font-size: 0.9em;
+   background: var(--color-bg-tertiary);
+   padding: 0.15em 0.4em;
+   border-radius: var(--radius-sm);
+}
+
+.text-gold {
+   color: var(--color-gold);
+}
+
+.text-red {
+   color: var(--color-red-light);
+}
+
+.text-muted {
+   color: var(--color-text-secondary);
+}
+
+.text-center {
+   text-align: center;
+}
+
+/* Section headings with accent underline */
+.section-title {
+   font-size: var(--text-3xl);
+   margin-bottom: var(--space-lg);
+   position: relative;
+   display: inline-block;
+   letter-spacing: 0.02em;
+}
+
+.section-title::after {
+   content: '';
+   position: absolute;
+   bottom: -8px;
+   left: 0;
+   width: 60px;
+   height: 2px;
+   background: var(--color-cyan);
+   box-shadow: var(--glow-cyan-sm);
+   border-radius: 2px;
+}
+
+.section-title--center {
+   display: block;
+   text-align: center;
+}
+
+.section-title--center::after {
+   left: 50%;
+   transform: translateX(-50%);
+}
+
+.section-subtitle {
+   font-size: var(--text-lg);
+   color: var(--color-text-secondary);
+   margin-top: var(--space-md);
+   max-width: 600px;
+}
+
+.section-subtitle--center {
+   margin-left: auto;
+   margin-right: auto;
+   text-align: center;
+}

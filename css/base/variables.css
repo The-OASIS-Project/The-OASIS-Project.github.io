@@ -1,0 +1,113 @@
+/* ============================================================
+ * OASIS Project — Design Tokens (v2 "Through the Visor")
+ * The palette is derived from the product's own material: the
+ * MIRAGE heads-up display. Cyan is structural HUD chrome, not
+ * a decorative accent. Gold = OASIS/armor, red = repulsor/alert.
+ * ============================================================ */
+
+:root {
+   /* ---- Backgrounds (cool near-black, visor-tinted) ---- */
+   --color-bg-primary: #060a0e;
+   --color-bg-secondary: #0a1017;
+   --color-bg-tertiary: #0e1720;
+   --color-bg-card: #0b131b;
+   --color-panel: rgba(14, 26, 36, 0.55);
+
+   /* ---- Arc-reactor cyan (primary / HUD chrome) ---- */
+   --color-cyan: #35d0f5;
+   --color-cyan-core: #a8ecff; /* bright highlight / core glow */
+   --color-cyan-deep: #0f88ad; /* dim rules, inactive states */
+   --color-cyan-dim: rgba(53, 208, 245, 0.14);
+   --color-cyan-faint: rgba(53, 208, 245, 0.07);
+
+   /* ---- Secondary accents ---- */
+   --color-gold: #ffb63e; /* OASIS / armor */
+   --color-gold-light: #ffd27a;
+   --color-red: #ff5a4d; /* repulsor / alert */
+   --color-red-light: #ff8078;
+
+   /* ---- Text (cool grey-cyan) ---- */
+   --color-text-primary: #dfeef4;
+   --color-text-secondary: #7fa4b3;
+   --color-text-heading: #f2fbff;
+   --color-text-dim: #52707e;
+
+   /* ---- Borders / Surfaces ---- */
+   --color-border: rgba(53, 208, 245, 0.16);
+   --color-border-hover: rgba(53, 208, 245, 0.4);
+   --color-border-soft: rgba(120, 160, 180, 0.1);
+   --color-overlay: rgba(3, 7, 10, 0.72);
+
+   /* ---- Gradients ---- */
+   --gradient-hero: radial-gradient(120% 90% at 50% 0%, #0a1a24 0%, #060a0e 62%);
+   --gradient-gold-cta: linear-gradient(135deg, var(--color-gold), #e0891a);
+   --gradient-red-accent: linear-gradient(135deg, var(--color-cyan), var(--color-cyan-deep));
+   --gradient-scan: linear-gradient(
+      180deg,
+      transparent 0%,
+      var(--color-cyan-faint) 50%,
+      transparent 100%
+   );
+
+   /* ---- Glows (the HUD signature) ---- */
+   --glow-cyan-sm: 0 0 6px rgba(53, 208, 245, 0.55);
+   --glow-cyan-md: 0 0 14px rgba(53, 208, 245, 0.4);
+   --glow-cyan-lg: 0 0 34px rgba(53, 208, 245, 0.35);
+   --glow-text: 0 0 12px rgba(53, 208, 245, 0.55);
+   --glow-gold: 0 0 16px rgba(255, 182, 62, 0.4);
+
+   /* ---- Spacing ---- */
+   --space-xs: 0.25rem;
+   --space-sm: 0.5rem;
+   --space-md: 1rem;
+   --space-lg: 1.5rem;
+   --space-xl: 2rem;
+   --space-2xl: 3rem;
+   --space-3xl: 4rem;
+   --space-4xl: 6rem;
+
+   /* ---- Typography ---- */
+   --font-display: 'Arame', 'Aldrich', 'Trebuchet MS', system-ui, sans-serif;
+   --font-heading: 'Aldrich', 'Trebuchet MS', 'Segoe UI', system-ui, sans-serif;
+   --font-body: 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', sans-serif;
+   --font-mono: 'IBM Plex Mono', 'Cascadia Code', 'Consolas', monospace;
+
+   --text-xs: 0.75rem;
+   --text-sm: 0.875rem;
+   --text-base: 1rem;
+   --text-lg: 1.125rem;
+   --text-xl: 1.25rem;
+   --text-2xl: 1.563rem;
+   --text-3xl: 1.953rem;
+   --text-4xl: 2.441rem;
+   --text-hero: clamp(2.75rem, 6vw, 5.5rem);
+   --text-hero-sub: clamp(1.05rem, 2vw, 1.45rem);
+
+   --line-height-tight: 1.15;
+   --line-height-normal: 1.6;
+   --line-height-loose: 1.8;
+
+   /* ---- Layout ---- */
+   --container-max: 1200px;
+   --container-wide: 1400px;
+   --container-narrow: 800px;
+   --header-height: 64px;
+
+   /* ---- Borders ---- */
+   --radius-sm: 3px;
+   --radius-md: 6px;
+   --radius-lg: 10px;
+   --radius-xl: 14px;
+
+   /* ---- Shadows ---- */
+   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+   --shadow-lg: 0 10px 34px rgba(0, 0, 0, 0.6);
+   --shadow-card: 0 2px 10px rgba(0, 0, 0, 0.4);
+   --shadow-card-hover: 0 10px 30px rgba(0, 0, 0, 0.55);
+
+   /* ---- Transitions ---- */
+   --transition-fast: 150ms ease;
+   --transition-base: 250ms ease;
+   --transition-slow: 400ms ease;
+}

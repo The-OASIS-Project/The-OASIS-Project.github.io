@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en" data-page="about">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="referrer" content="strict-origin-when-cross-origin" />
+      <meta
+         http-equiv="Content-Security-Policy"
+         content="default-src 'self'; img-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; frame-src https://www.youtube-nocookie.com; object-src 'none'; base-uri 'none'; form-action 'none'"
+      />
+      <title>About — The OASIS Project</title>
+      <meta
+         name="description"
+         content="The story behind OASIS: a real-life JARVIS — one open-source AI for your home and your Iron Man suit, plus the HUD, sensors, telemetry, and repulsors behind it. All GPLv3."
+      />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="The OASIS Project" />
+      <meta property="og:url" content="https://www.oasisproject.net/about.html" />
+      <meta property="og:title" content="About — The OASIS Project" />
+      <meta property="og:description" content="The story behind OASIS: a real-life JARVIS — one open-source AI for your home and your Iron Man suit, plus the HUD, sensors, telemetry, and repulsors behind it. All GPLv3." />
+      <meta property="og:image" content="https://www.oasisproject.net/assets/images/setup_on_table.png" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+      <link rel="stylesheet" href="css/main.css" />
+      <script>document.documentElement.classList.add('js');</script>
+   </head>
+   <body>
+      <div id="header"></div>
+
+      <main>
+         <!-- Hero -->
+         <section class="page-hero">
+            <div class="container">
+               <h1 class="page-hero__title reveal fade-up">What is OASIS?</h1>
+               <p class="page-hero__subtitle reveal fade-up">
+                  My open-source attempt at a real-life JARVIS —<br />
+                  one AI for your home and your Iron Man suit.<br />
+                  Voice AI. Heads-up display. Sensors. Telemetry. Repulsors. All GPLv3.
+               </p>
+            </div>
+         </section>
+
+         <!-- The Pitch -->
+         <section class="section">
+            <div class="container container--narrow">
+               <div class="reveal fade-up">
+                  <h2 class="section-title">The short version</h2>
+                  <p>
+                     OASIS — <strong>Open Armor Systems Integrated Suite</strong> — is one open-source AI framework that runs your
+                     home and the full hardware-and-software stack for a wearable Iron Man suit. It's the same assistant
+                     across both. Tony Stark's systems — a voice AI, a heads-up display, sensors, telemetry, and a versatile suit controller and monitor — can be built today from off-the-shelf parts and open-source code. That's what OASIS is.
+                  </p>
+                  <p>
+                     None of it is a mockup. The voice assistant gets used every day. The heads-up display shows a live camera passthrough with gauges, maps, and data overlaid. The sensor suite reads IMU, GPS, air quality, and temperature in
+                     real time. The telemetry daemon watches the host computer's load, power/battery, and thermals. The armor firmware drives
+                     repulsor LEDs over wireless and monitors each component's battery and temperature. The 3D-printable parts integrate into your suit's model to enhance its capabilities.
+                  </p>
+                  <p>
+                     Every line of code, every CAD file, every wiring diagram, every prompt is in the open under
+                     GPLv3. You can clone the repos, build the parts, and have it all running on your own hardware.
+                  </p>
+               </div>
+            </div>
+         </section>
+
+         <!-- Why this exists -->
+         <section class="section section--alt">
+            <div class="container">
+               <div class="feature reveal fade-up">
+                  <div class="feature__content">
+                     <span class="feature__label">Origin</span>
+                     <h2 class="feature__title">Why this exists</h2>
+                     <p class="feature__text">
+                        I started OASIS with a simple question: how much of the Iron Man stack can you actually build
+                        today with parts you can order online?
+                     </p>
+                     <p class="feature__text">
+                        The answer may surprise you: most of it. GPU-accelerated speech recognition runs on
+                        inexpensive embedded boards. Streaming LLM responses with sub-second perceived latency are
+                        routine, whether the model is local or in the cloud. Stereoscopic micro-displays cost less
+                        than a phone. ESP32 boards with built-in WiFi and Bluetooth are sub-$10. Lithium battery packs are commodity hardware. What was a movie special effect a decade
+                        ago is now an embedded systems project.
+                     </p>
+                     <p class="feature__text">
+                        OASIS is the proof: a system I maintain and actually use.
+                     </p>
+                  </div>
+                  <div class="feature__visual">
+                     <img
+                        src="assets/images/workshop-helmet.jpg"
+                        alt="A 3D-printed Iron Man helmet on the workbench next to the electronics and HUD"
+                        style="border-radius: var(--radius-lg); aspect-ratio: 4/3; object-fit: cover; width: 100%"
+                        loading="lazy"
+                     />
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <!-- Written in C -->
+         <section class="section">
+            <div class="container container--narrow">
+               <div class="reveal fade-up">
+                  <h2 class="section-title">Written in C, the right way</h2>
+                  <p>
+                     Almost every voice assistant like this is written in Python, or simply a fancy WebUI written in Node.js. OASIS
+                     isn't. The whole suite is written in C and C++, running close to the metal on the same kind
+                     of embedded hardware that has to be fast, predictable, and last on a battery.
+                  </p>
+                  <p>
+                     As far as I know, it's the only JARVIS-class assistant built this way. For an embedded, real-time system you wear, C is simply the right choice — no interpreter overhead,
+                     and no garbage collector pausing mid-sentence between you and the hardware.
+                  </p>
+                  <p>It's how Tony would have built it — engineered, not scripted.</p>
+               </div>
+            </div>
+         </section>
+
+         <!-- The seven components -->
+         <section class="section section--alt">
+            <div class="container container--narrow">
+               <h2 class="section-title reveal fade-up">Seven components, one platform</h2>
+               <p class="reveal fade-up" style="margin-top: var(--space-md)">
+                  Each part is independent and useful on its own; together they form a complete system.
+                  <a href="dawn.html">DAWN</a> is the brain, <a href="mirage.html">MIRAGE</a> the eyes,
+                  <a href="components.html#stat">STAT</a> the dashboard, <a href="components.html#echo">ECHO</a> the radio,
+                  <a href="components.html#aura">AURA</a> the senses, <a href="components.html#spark">SPARK</a> the armor components,
+                  and <a href="components.html#beacon">BEACON</a> the mechanical design — each with its own repo, wired together
+                  over MQTT and WebSocket.
+               </p>
+            </div>
+         </section>
+
+         <!-- How they fit together -->
+         <section class="section">
+            <div class="container">
+               <div class="feature feature--reverse reveal fade-up" style="grid-template-columns: 1fr; gap: var(--space-xl); max-width: 920px; margin-inline: auto; direction: ltr">
+                  <div class="feature__content">
+                     <span class="feature__label">Architecture</span>
+                     <h2 class="feature__title">How the pieces fit together</h2>
+                     <p class="feature__text">
+                        DAWN sits at the center. The voice assistant is the orchestration hub — it interprets
+                        commands, runs tools, and routes messages to every other component over MQTT and direct
+                        WebSocket links.
+                     </p>
+                     <p class="feature__text">
+                        AURA streams sensor readings up to DAWN. STAT reports the host computer's power and system
+                        health. SPARK publishes armor and repulsor state and takes commands. ECHO routes incoming
+                        calls and SMS into the same conversation surface. MIRAGE subscribes to the relevant topics and
+                        renders everything on the HUD. You talk to DAWN; DAWN talks to everything else.
+                     </p>
+                     <p class="feature__text">
+                        Each component is a standalone repo that builds independently. You can run DAWN on its own
+                        as a voice assistant. You can run MIRAGE on its own as a HUD. The integration is in the protocols, not in any
+                        one binary.
+                     </p>
+                  </div>
+                  <div class="feature__visual">
+                     <svg
+                        viewBox="0 0 800 500"
+                        role="img"
+                        aria-label="System diagram: DAWN at the center, connected over MQTT and WebSocket to MIRAGE (HUD), AURA (sensors), STAT (host telemetry), SPARK (armor), and ECHO (cellular)."
+                        style="width: 100%; height: auto; display: block; background: var(--color-bg-tertiary); border-radius: var(--radius-lg); font-family: 'Source Sans 3', system-ui, sans-serif"
+                     >
+                        <title>How the OASIS components connect</title>
+                        <!-- Spokes -->
+                        <g stroke="#ffb63e" stroke-width="2" stroke-opacity="0.45">
+                           <line x1="400" y1="250" x2="400" y2="70" />
+                           <line x1="400" y1="250" x2="571" y2="194" />
+                           <line x1="400" y1="250" x2="506" y2="396" />
+                           <line x1="400" y1="250" x2="294" y2="396" />
+                           <line x1="400" y1="250" x2="229" y2="194" />
+                        </g>
+                        <!-- Outer nodes -->
+                        <g>
+                           <g>
+                              <rect x="340" y="44" width="120" height="52" rx="8" fill="#1e1e1e" stroke="rgba(255,255,255,0.15)" />
+                              <text x="400" y="68" text-anchor="middle" fill="#eceff1" font-size="19" font-weight="700">MIRAGE</text>
+                              <text x="400" y="85" text-anchor="middle" fill="#90a4ae" font-size="12">HUD</text>
+                           </g>
+                           <g>
+                              <rect x="511" y="168" width="120" height="52" rx="8" fill="#1e1e1e" stroke="rgba(255,255,255,0.15)" />
+                              <text x="571" y="192" text-anchor="middle" fill="#eceff1" font-size="19" font-weight="700">AURA</text>
+                              <text x="571" y="209" text-anchor="middle" fill="#90a4ae" font-size="12">Helmet Sensors</text>
+                           </g>
+                           <g>
+                              <rect x="446" y="370" width="120" height="52" rx="8" fill="#1e1e1e" stroke="rgba(255,255,255,0.15)" />
+                              <text x="506" y="394" text-anchor="middle" fill="#eceff1" font-size="19" font-weight="700">STAT</text>
+                              <text x="506" y="411" text-anchor="middle" fill="#90a4ae" font-size="12">Telemetry</text>
+                           </g>
+                           <g>
+                              <rect x="234" y="370" width="120" height="52" rx="8" fill="#1e1e1e" stroke="rgba(255,255,255,0.15)" />
+                              <text x="294" y="394" text-anchor="middle" fill="#eceff1" font-size="19" font-weight="700">SPARK</text>
+                              <text x="294" y="411" text-anchor="middle" fill="#90a4ae" font-size="12">Armor</text>
+                           </g>
+                           <g>
+                              <rect x="169" y="168" width="120" height="52" rx="8" fill="#1e1e1e" stroke="rgba(255,255,255,0.15)" />
+                              <text x="229" y="192" text-anchor="middle" fill="#eceff1" font-size="19" font-weight="700">ECHO</text>
+                              <text x="229" y="209" text-anchor="middle" fill="#90a4ae" font-size="12">Cellular</text>
+                           </g>
+                        </g>
+                        <!-- Center node: DAWN -->
+                        <rect x="325" y="217" width="150" height="66" rx="10" fill="#ffb63e" />
+                        <text x="400" y="248" text-anchor="middle" fill="#0d0d0d" font-size="24" font-weight="700">DAWN</text>
+                        <text x="400" y="268" text-anchor="middle" fill="#0d0d0d" font-size="12" font-weight="600" opacity="0.8">Orchestration hub</text>
+                        <!-- Caption -->
+                        <text x="400" y="480" text-anchor="middle" fill="#90a4ae" font-size="13">Connected over MQTT &#38; WebSocket — each component also runs standalone</text>
+                     </svg>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <!-- DAWN beyond the suit -->
+         <section class="section section--alt">
+            <div class="container container--narrow">
+               <div class="reveal fade-up">
+                  <h2 class="section-title">Not just the suit — your whole home</h2>
+                  <p>
+                     What most people miss: DAWN is a JARVIS for your
+                     <em>house</em>, not just your armor. The suit is just one of the things it runs.
+                  </p>
+                  <p>
+                     The same assistant lives on a device in your home and reaches everything in it — lights, locks,
+                     and climate through Home Assistant; your calendar and email; music in any room; web search,
+                     reminders, and notes it keeps for you. Voice satellites on Raspberry Pi and ESP32 put it in the
+                     kitchen, the office, and the workshop. Talk to it out loud, from a browser, or from Telegram,
+                     Slack, Discord, and SMS — it'll even take a phone call. And it remembers you across all of it.
+                  </p>
+                  <p>
+                     Suit up and DAWN is your heads-up co-pilot. Walk back through the door and it's the same brain
+                     running your home — cloud-optional, private by default, and entirely yours.
+                  </p>
+               </div>
+            </div>
+         </section>
+
+         <!-- The philosophy -->
+         <section class="section">
+            <div class="container container--narrow">
+               <div class="reveal fade-up">
+                  <h2 class="section-title">The philosophy</h2>
+                  <p>
+                     It's all GPLv3, open source and ready for the community to dig in. Take it, change it, submit
+                     your work back to the project — that's the whole point.
+                  </p>
+                  <p>
+                     There's no telemetry, no analytics, and nothing phoning home — no third-party plugin
+                     marketplace with its own security problems, no cloud account to get locked out of, no
+                     subscription, and no kill switch. Once it's built, the hardware and the data are yours, and the
+                     only thing between you and a working system is the time to put it together.
+                  </p>
+                  <p>
+                     Cloud LLMs are optional. DAWN runs fully local on a Jetson with Whisper and either llama.cpp or Ollama if you want
+                     it to — out of the box, the config keeps everything on your own hardware.
+                  </p>
+               </div>
+            </div>
+         </section>
+
+         <!-- Status -->
+         <section class="section section--alt">
+            <div class="container container--narrow">
+               <h2 class="section-title section-title--center reveal fade-up">What's real, what's still cooking</h2>
+               <p class="section-subtitle section-subtitle--center reveal fade-up">
+                  An honest status check. It's a one-person project, not a funded startup.
+               </p>
+
+               <div class="spec-table-wrapper reveal fade-up" style="margin-top: var(--space-2xl)">
+                  <table class="spec-table">
+                     <thead>
+                        <tr>
+                           <th scope="col">Component</th>
+                           <th scope="col">Status</th>
+                           <th scope="col">Notes</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td class="highlight-cell">DAWN</td>
+                           <td><span class="tag tag--primary">Mature</span></td>
+                           <td>Production-grade. 20+ tools, multi-room satellites, persistent memory.</td>
+                        </tr>
+                        <tr>
+                           <td>MIRAGE</td>
+                           <td><span class="tag tag--primary">Mature</span></td>
+                           <td>Dual displays, 16 HUD screens, live camera passthrough, hardware H.264 recording and streaming.</td>
+                        </tr>
+                        <tr>
+                           <td>STAT</td>
+                           <td><span class="tag tag--primary">Mature</span></td>
+                           <td>Host-system telemetry (CPU, memory, power, battery, fans), Python GUI.</td>
+                        </tr>
+                        <tr>
+                           <td>ECHO</td>
+                           <td><span class="tag tag--primary">Mature</span></td>
+                           <td>Cellular modem daemon. Calls + SMS routed to DAWN; concatenated SMS supported.</td>
+                        </tr>
+                        <tr>
+                           <td>AURA</td>
+                           <td><span class="tag tag--secondary">Working</span></td>
+                           <td>New v2.5 hardware. Sensor suite operational, servo faceplate functional.</td>
+                        </tr>
+                        <tr>
+                           <td>SPARK</td>
+                           <td><span class="tag tag--secondary">Working</span></td>
+                           <td>Armor + repulsor firmware — repulsor LEDs, gestures, and armor telemetry — on real hardware.</td>
+                        </tr>
+                        <tr>
+                           <td>BEACON</td>
+                           <td><span class="tag tag--muted">Iterative</span></td>
+                           <td>Parts library grows as the build progresses. Open contributions welcome.</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </section>
+
+         <!-- Who it's for -->
+         <section class="section">
+            <div class="container">
+               <h2 class="section-title section-title--center reveal fade-up">Who OASIS is for</h2>
+
+               <div class="grid grid-3 stagger" style="margin-top: var(--space-2xl)">
+                  <div class="card reveal fade-up">
+                     <span class="card__icon" aria-hidden="true">🛠️</span>
+                     <h3 class="card__title">Makers and builders</h3>
+                     <p class="card__text">
+                        If you want to assemble a wearable system from open hardware and open code, the whole
+                        stack is here. No reverse engineering required.
+                     </p>
+                  </div>
+
+                  <div class="card reveal fade-up">
+                     <span class="card__icon" aria-hidden="true">💻</span>
+                     <h3 class="card__title">Embedded developers</h3>
+                     <p class="card__text">
+                        Six independent repos covering C/C++ on Linux, FreeRTOS on ESP32, Python tooling, SDL UI,
+                        and MQTT integration. Pick a layer and dig in.
+                     </p>
+                  </div>
+
+                  <div class="card reveal fade-up">
+                     <span class="card__icon" aria-hidden="true">🔒</span>
+                     <h3 class="card__title">Privacy-first users</h3>
+                     <p class="card__text">
+                        A voice assistant that doesn't send your conversations to a third party. Configure it
+                        cloud-free and it stays on your hardware.
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <!-- CTA -->
+         <section class="section section--alt">
+            <div class="container" style="text-align: center">
+               <h2 class="section-title section-title--center reveal fade-up">Dig in</h2>
+               <p class="section-subtitle section-subtitle--center reveal fade-up">
+                  Start with DAWN — it's the most mature piece — or jump straight to the GitHub org.
+               </p>
+               <div
+                  class="reveal fade-up"
+                  style="margin-top: var(--space-xl); display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap"
+               >
+                  <a href="dawn.html" class="btn btn--cyan">Explore DAWN</a>
+                  <a
+                     href="https://github.com/The-OASIS-Project"
+                     class="btn btn--outline"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     >View on GitHub</a
+                  >
+                  <a
+                     href="https://www.patreon.com/c/KerseyFabrications"
+                     class="btn btn--outline"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     >Support on Patreon</a
+                  >
+               </div>
+            </div>
+         </section>
+      </main>
+
+      <div id="footer"></div>
+
+      <script src="js/hud.js"></script>
+      <script src="js/nav.js"></script>
+      <script src="js/components.js"></script>
+      <script src="js/animations.js"></script>
+   </body>
+</html>

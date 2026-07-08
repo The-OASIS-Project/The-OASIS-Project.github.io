@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en" data-page="dawn">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="referrer" content="strict-origin-when-cross-origin" />
+      <meta
+         http-equiv="Content-Security-Policy"
+         content="default-src 'self'; img-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; frame-src https://www.youtube-nocookie.com; object-src 'none'; base-uri 'none'; form-action 'none'"
+      />
+      <title>DAWN — Voice AI Assistant | The OASIS Project</title>
+      <meta
+         name="description"
+         content="DAWN: A production-grade, private voice AI assistant with 20+ tools, multi-room satellites, persistent memory, and smart home control."
+      />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="The OASIS Project" />
+      <meta property="og:url" content="https://www.oasisproject.net/dawn.html" />
+      <meta property="og:title" content="DAWN — Voice AI Assistant | The OASIS Project" />
+      <meta property="og:description" content="DAWN: A production-grade, private voice AI assistant with 20+ tools, multi-room satellites, persistent memory, and smart home control." />
+      <meta property="og:image" content="https://www.oasisproject.net/assets/images/dawn_ai_concept.png" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+      <link rel="stylesheet" href="css/main.css" />
+      <script>document.documentElement.classList.add('js');</script>
+   </head>
+   <body>
+      <div id="header"></div>
+
+      <main>
+         <!-- Hero -->
+         <section class="page-hero">
+            <div class="container">
+               <h1 class="page-hero__title reveal fade-up">D.A.W.N.</h1>
+               <p class="page-hero__subtitle reveal fade-up">
+                  Digital Assistant for Workflow Neural-inference.<br />Your own private AI assistant — a
+                  production-grade JARVIS, written in C.
+               </p>
+            </div>
+         </section>
+
+         <!-- Overview -->
+         <section class="section">
+            <div class="container container--narrow">
+               <div class="reveal fade-up">
+                  <h2 class="section-title">Overview</h2>
+                  <p>
+                     I built DAWN from scratch in C/C++ for embedded Linux. It's a full voice assistant — GPU-accelerated speech recognition, high-quality text-to-speech, and
+                     today's best large language models. It's designed for NVIDIA Jetson, but also installs on x86
+                     Linux and cloud hosts.
+                  </p>
+                  <p>
+                     Unlike cloud-dependent assistants, DAWN gives you complete control — your conversations stay on
+                     your hardware and your data stays private. With 20+ built-in tools, multi-room satellites, and a
+                     full web interface, it holds up as an everyday assistant.
+                  </p>
+                  <p>
+                     DAWN also supports extended thinking, parallel tool execution, streaming responses, and memory
+                     that persists across sessions. Every tool is compiled into the binary — there's no plugin
+                     marketplace, no scripting layer, no arbitrary code execution, and no third-party cloud service storing your data or credentials. That's the main difference from the plugin-based agents DAWN gets compared to: a lot of the
+                     attack surface those systems have to worry about simply isn't there.
+                  </p>
+               </div>
+            </div>
+         </section>
+
+         <!-- LLM Integration -->
+         <section class="section section--alt">
+            <div class="container">
+               <div class="feature reveal fade-up">
+                  <div class="feature__content">
+                     <span class="feature__label">Intelligence</span>
+                     <h2 class="feature__title">Multi-Provider LLM Integration</h2>
+                     <p class="feature__text">
+                        DAWN connects to the best AI models available — OpenAI GPT-series, Anthropic Claude, Google Gemini,
+                        or any model through the OpenRouter gateway. Prefer to stay offline? Run fully local models via
+                        Ollama or llama.cpp. Switch providers on the fly from the web interface.
+                     </p>
+                     <ul class="feature__list">
+                        <li>Streaming responses with ~1.3 second perceived latency to first audio</li>
+                        <li>Extended thinking / reasoning mode (Claude, OpenAI, Gemini, local)</li>
+                        <li>One OpenRouter key fronts hundreds of models from every major vendor</li>
+                        <li>Parallel tool execution for concurrent API calls</li>
+                        <li>Conversation context management with automatic summarization</li>
+                        <li>Vision AI for image analysis and document understanding</li>
+                        <li>Local by default — even with a cloud LLM, only your prompt and tool results are sent; your documents, memories, and conversation history stay on your hardware</li>
+                     </ul>
+                  </div>
+                  <div class="feature__visual">
+                     <img
+                        src="assets/images/dawn-webui-tools.jpg"
+                        alt="DAWN WebUI — a conversation with tool calls and debug output visible"
+                        style="width: 100%; height: auto; border-radius: var(--radius-lg); display: block"
+                        loading="lazy"
+                     />
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <!-- Memory -->
+         <section class="section">
+            <div class="container">
+               <div class="feature reveal fade-up" style="grid-template-columns: 1fr 1.15fr">
+                  <div class="feature__content">
+                     <span class="feature__label">Memory</span>
+                     <h2 class="feature__title">It Actually Remembers You</h2>
+                     <p class="feature__text">
+                        Most assistants forget everything the moment a chat ends. DAWN doesn't. At the end of each
+                        conversation it consolidates what mattered — the people in your life, your preferences and
+                        routines, the projects you're working on — into a memory that carries across every future
+                        conversation. Come back a week later and it still knows what you were talking about.
+                     </p>
+                     <p class="feature__text">
+                        It's the piece I've put the most time and money into, and it's what makes DAWN feel less like
+                        a chatbot and more like a JARVIS that actually knows you.
+                     </p>
+                     <ul class="feature__list">
+                        <li><strong>Cross-conversation recall:</strong> facts, preferences, and context persist across every session — it picks up where you left off</li>
+                        <li><strong>Entity graph:</strong> people, places, and things are stored as a connected web of relationships, not a flat list</li>
+                        <li><strong>Sleep-style consolidation:</strong> memories are extracted after a conversation ends, so a live chat never slows down</li>
+                        <li><strong>Hybrid recall:</strong> keyword + semantic search finds the right memory even when you phrase it differently</li>
+                        <li><strong>Understands time:</strong> "last month," "the other day," and "yesterday" resolve to real dates</li>
+                        <li><strong>Self-correcting:</strong> newer facts supersede old ones, and confidence fades over time</li>
+                        <li><strong>Yours alone:</strong> every memory lives in a local database on your hardware — never uploaded</li>
+                     </ul>
+                  </div>
+                  <div class="feature__visual">
+                     <svg
+                        viewBox="140 22 520 480"
+                        role="img"
+                        aria-label="Memory graph: 'You' at the center connected to remembered people, places, and preferences — illustrating DAWN's connected memory of the world around you."
+                        style="width: 100%; height: auto; display: block; background: var(--color-bg-tertiary); border-radius: var(--radius-lg); font-family: 'Source Sans 3', system-ui, sans-serif"
+                     >
+                        <title>What DAWN remembers about you</title>
+                        <g stroke="#ffb63e" stroke-width="2" stroke-opacity="0.45">
+                           <line x1="400" y1="250" x2="400" y2="70" />
+                           <line x1="400" y1="250" x2="571" y2="194" />
+                           <line x1="400" y1="250" x2="506" y2="396" />
+                           <line x1="400" y1="250" x2="294" y2="396" />
+                           <line x1="400" y1="250" x2="229" y2="194" />
+                        </g>
+                        <g>
+                           <g>
+                              <rect x="330" y="42" width="140" height="56" rx="8" fill="#1e1e1e" stroke="rgba(255,255,255,0.15)" />
+                              <text x="400" y="66" text-anchor="middle" fill="#eceff1" font-size="16" font-weight="700">Pepper Potts</text>
+                              <text x="400" y="84" text-anchor="middle" fill="#90a4ae" font-size="11">partner</text>
+                           </g>
+                           <g>
+                              <rect x="501" y="166" width="140" height="56" rx="8" fill="#1e1e1e" stroke="rgba(255,255,255,0.15)" />
+                              <text x="571" y="190" text-anchor="middle" fill="#eceff1" font-size="16" font-weight="700">Cheeseburger</text>
+                              <text x="571" y="208" text-anchor="middle" fill="#90a4ae" font-size="11">the usual</text>
+                           </g>
+                           <g>
+                              <rect x="436" y="368" width="140" height="56" rx="8" fill="#1e1e1e" stroke="rgba(255,255,255,0.15)" />
+                              <text x="506" y="392" text-anchor="middle" fill="#eceff1" font-size="16" font-weight="700">Mark III</text>
+                              <text x="506" y="410" text-anchor="middle" fill="#90a4ae" font-size="11">current build</text>
+                           </g>
+                           <g>
+                              <rect x="224" y="368" width="140" height="56" rx="8" fill="#1e1e1e" stroke="rgba(255,255,255,0.15)" />
+                              <text x="294" y="392" text-anchor="middle" fill="#eceff1" font-size="16" font-weight="700">Rhodey</text>
+                              <text x="294" y="410" text-anchor="middle" fill="#90a4ae" font-size="11">best friend</text>
+                           </g>
+                           <g>
+                              <rect x="159" y="166" width="140" height="56" rx="8" fill="#1e1e1e" stroke="rgba(255,255,255,0.15)" />
+                              <text x="229" y="190" text-anchor="middle" fill="#eceff1" font-size="16" font-weight="700">Malibu</text>
+                              <text x="229" y="208" text-anchor="middle" fill="#90a4ae" font-size="11">home</text>
+                           </g>
+                        </g>
+                        <rect x="345" y="220" width="110" height="60" rx="10" fill="#ffb63e" />
+                        <text x="400" y="257" text-anchor="middle" fill="#0d0d0d" font-size="22" font-weight="700">You</text>
+                        <text x="400" y="482" text-anchor="middle" fill="#90a4ae" font-size="13">Every conversation adds to a connected memory of your world</text>
+                     </svg>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <!-- Web Interface -->
+         <section class="section section--alt">
+            <div class="container">
+               <div class="feature feature--reverse reveal fade-up">
+                  <div class="feature__content">
+                     <span class="feature__label">Interface</span>
+                     <h2 class="feature__title">Full Web Interface</h2>
+                     <p class="feature__text">
+                        A complete web UI served directly from DAWN — no separate web server needed. Voice and text
+                        input, real-time streaming responses, conversation history, and full system configuration.
+                        Switch LLM providers, adjust model parameters, and toggle extended thinking — all from the
+                        browser.
+                     </p>
+                     <ul class="feature__list">
+                        <li>7 built-in color themes</li>
+                        <li>Voice input with push-to-talk and wake word</li>
+                        <li>LLM provider/model switching and parameter control</li>
+                        <li>Conversation history with full text search</li>
+                        <li>Document library with drag-and-drop upload</li>
+                        <li>Vision/image upload for AI analysis</li>
+                        <li>Calendar, email, contacts, and memory management</li>
+                        <li>Messaging channels — chat with DAWN from Telegram, Slack, Discord, or SMS</li>
+                        <li>Debug mode with raw LLM output</li>
+                     </ul>
+                  </div>
+                  <div class="feature__visual">
+                     <img
+                        src="assets/images/dawn-webui-themes.jpg"
+                        alt="DAWN WebUI — a conversation shown in one of the color themes"
+                        style="width: 100%; height: auto; border-radius: var(--radius-lg); display: block"
+                        loading="lazy"
+                     />
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <!-- Built-in Tools -->
+         <section class="section">
+            <div class="container">
+               <h2 class="section-title section-title--center reveal fade-up">20+ Built-in Tools</h2>
+               <p class="section-subtitle section-subtitle--center reveal fade-up">
+                  Every tool is native C — no plugins, no scripting layers, no external dependencies at runtime.
+               </p>
+
+               <div class="grid grid-4 stagger" style="margin-top: var(--space-2xl)">
+                  <div class="tool-card reveal fade-up">
+                     <div class="tool-card__icon" aria-hidden="true">📅</div>
+                     <div class="tool-card__name">Calendar</div>
+                     <div class="tool-card__tooltip">CalDAV sync with Google Calendar. Create, query, and manage events with recurrence support.</div>
+                  </div>
+                  <div class="tool-card reveal fade-up">
+                     <div class="tool-card__icon" aria-hidden="true">📧</div>
+                     <div class="tool-card__name">Email</div>
+                     <div class="tool-card__tooltip">IMAP/SMTP and Gmail REST API. Read, compose, search, and manage mail across multiple accounts.</div>
+                  </div>
+                  <div class="tool-card reveal fade-up">
+                     <div class="tool-card__icon" aria-hidden="true">🔍</div>
+                     <div class="tool-card__name">Web Search</div>
+                     <div class="tool-card__tooltip">Privacy-respecting search via SearXNG. No tracking, no ads, no data harvesting.</div>
+                  </div>
+                  <div class="tool-card reveal fade-up">
+                     <div class="tool-card__icon" aria-hidden="true">🌤️</div>
+                     <div class="tool-card__name">Weather</div>
+                     <div class="tool-card__tooltip">Current conditions and multi-day forecasts. Location-aware with configurable units.</div>
+                  </div>
+                  <div class="tool-card reveal fade-up">
+                     <div class="tool-card__icon" aria-hidden="true">🎵</div>
+                     <div class="tool-card__name">Music Player</div>
+                     <div class="tool-card__tooltip">Local music library with playlist builder, genre search, shuffle/repeat, and queue management.</div>
+                  </div>
+                  <div class="tool-card reveal fade-up">
+                     <div class="tool-card__icon" aria-hidden="true">⏰</div>
+                     <div class="tool-card__name">Scheduler</div>
+                     <div class="tool-card__tooltip">Timers, alarms, reminders, and scheduled tool execution. Recurrence, snooze, and audible chimes.</div>
+                  </div>
+                  <div class="tool-card reveal fade-up">
+                     <div class="tool-card__icon" aria-hidden="true">📄</div>
+                     <div class="tool-card__name">Document Search</div>
+                     <div class="tool-card__tooltip">RAG-powered semantic search across uploaded documents. Hybrid cosine + keyword matching.</div>
+                  </div>
+                  <div class="tool-card reveal fade-up">
+                     <div class="tool-card__icon" aria-hidden="true">🏠</div>
+                     <div class="tool-card__name">Home Assistant</div>
+                     <div class="tool-card__tooltip">Smart home control via Home Assistant API. Lights, switches, climate, and entity queries.</div>
+                  </div>
+                  <div class="tool-card reveal fade-up">
+                     <div class="tool-card__icon" aria-hidden="true">🧠</div>
+                     <div class="tool-card__name">Memory</div>
+                     <div class="tool-card__tooltip">Persistent knowledge graph with entities and relations. Remembers across conversations.</div>
+                  </div>
+                  <div class="tool-card reveal fade-up">
+                     <div class="tool-card__icon" aria-hidden="true">👤</div>
+                     <div class="tool-card__name">Contacts</div>
+                     <div class="tool-card__tooltip">Contact management with search. Linked to the knowledge graph for relationship context.</div>
+                  </div>
+                  <div class="tool-card reveal fade-up">
+                     <div class="tool-card__icon" aria-hidden="true">👁️</div>
+                     <div class="tool-card__name">Vision AI</div>
+                     <div class="tool-card__tooltip">Analyze images and screenshots via multimodal LLM. Upload from WebUI or capture from MIRAGE.</div>
+                  </div>
+                  <div class="tool-card reveal fade-up">
+                     <div class="tool-card__icon" aria-hidden="true">🔢</div>
+                     <div class="tool-card__name">Calculator</div>
+                     <div class="tool-card__tooltip">Expression evaluation with a digit-perfect exact mode for arbitrary-precision integers, plus factorials, unit and base conversion.</div>
+                  </div>
+                  <div class="tool-card reveal fade-up">
+                     <div class="tool-card__icon" aria-hidden="true">💬</div>
+                     <div class="tool-card__name">Messaging Channels</div>
+                     <div class="tool-card__tooltip">Chat with DAWN from Telegram, Slack, Discord, or SMS. Each channel is a persistent conversation with full tools and memory.</div>
+                  </div>
+                  <div class="tool-card reveal fade-up">
+                     <div class="tool-card__icon" aria-hidden="true">☎️</div>
+                     <div class="tool-card__name">Phone &amp; SMS</div>
+                     <div class="tool-card__tooltip">Place and receive calls and texts on a real number via the ECHO modem. Caller ID from contacts, with call and SMS history.</div>
+                  </div>
+                  <div class="tool-card reveal fade-up">
+                     <div class="tool-card__icon" aria-hidden="true">📝</div>
+                     <div class="tool-card__name">Notes &amp; Reference</div>
+                     <div class="tool-card__tooltip">File and recall reference text with hybrid keyword + semantic search, surgical edits, and version history with undo.</div>
+                  </div>
+                  <div class="tool-card reveal fade-up">
+                     <div class="tool-card__icon" aria-hidden="true">💾</div>
+                     <div class="tool-card__name">Code Analysis</div>
+                     <div class="tool-card__tooltip">Index your source repositories into a code graph and ask about them — call sites, definitions, and branch diffs.</div>
+                  </div>
+                  <div class="tool-card reveal fade-up">
+                     <div class="tool-card__icon" aria-hidden="true">🖼️</div>
+                     <div class="tool-card__name">Image Search</div>
+                     <div class="tool-card__tooltip">Search the web for images, fetched server-side and cached. SSRF-protected and displayed inline.</div>
+                  </div>
+                  <div class="tool-card reveal fade-up">
+                     <div class="tool-card__icon" aria-hidden="true">🔗</div>
+                     <div class="tool-card__name">URL Fetcher</div>
+                     <div class="tool-card__tooltip">Fetch and read web pages, with a headless-browser fallback for JavaScript-heavy sites.</div>
+                  </div>
+                  <div class="tool-card reveal fade-up">
+                     <div class="tool-card__icon" aria-hidden="true">🎨</div>
+                     <div class="tool-card__name">Visual Diagrams</div>
+                     <div class="tool-card__tooltip">The LLM renders inline SVG, HTML, and Chart.js visuals — flowcharts, diagrams, and data charts right in the conversation.</div>
+                  </div>
+                  <div class="tool-card reveal fade-up">
+                     <div class="tool-card__icon" aria-hidden="true">⚙️</div>
+                     <div class="tool-card__name">Multi-Step Plans</div>
+                     <div class="tool-card__tooltip">A plan executor runs multi-step workflows with conditionals and loops in a single LLM round trip.</div>
+                  </div>
+                  <div class="tool-card reveal fade-up">
+                     <div class="tool-card__icon" aria-hidden="true">🔊</div>
+                     <div class="tool-card__name">Sound Effects</div>
+                     <div class="tool-card__tooltip">Play suit sound effects across the OASIS armor system, with concurrent multi-slot playback.</div>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <!-- Multi-Room Satellites -->
+         <section class="section section--alt">
+            <div class="container">
+               <div class="feature reveal fade-up" style="grid-template-columns: 1fr; gap: var(--space-xl); max-width: 920px; margin-inline: auto">
+                  <div class="feature__content">
+                     <span class="feature__label">Distributed</span>
+                     <h2 class="feature__title">Multi-Room Satellites</h2>
+                     <p class="feature__text">
+                        One server, one port, every room. DAWN's satellite system puts a voice assistant anywhere in your
+                        home — from a Raspberry Pi with a touchscreen to a tiny ESP32 push-to-talk module.
+                     </p>
+                     <ul class="feature__list">
+                        <li>
+                           <strong>Tier 1 (Raspberry Pi):</strong> Local ASR/TTS, SDL2 touch UI, text-only to server
+                        </li>
+                        <li>
+                           <strong>Tier 2 (ESP32):</strong> Streams raw PCM audio, server handles all processing
+                        </li>
+                        <li>Unified WebSocket protocol — all tiers on the same port</li>
+                        <li>Capability-based routing — server auto-detects device type</li>
+                        <li>Pre-shared key authentication for secure registration</li>
+                     </ul>
+                  </div>
+                  <div class="feature__visual">
+                     <svg
+                        viewBox="0 0 800 500"
+                        role="img"
+                        aria-label="Topology: one DAWN server on port 3000 serves satellites in multiple rooms — Tier 1 Raspberry Pi units in the living room and kitchen, Tier 2 ESP32 units in the office and garage, a browser WebUI client, and a mobile app (coming soon) — all over one WebSocket."
+                        style="width: 100%; height: auto; display: block; background: var(--color-bg-tertiary); border-radius: var(--radius-lg); font-family: 'Source Sans 3', system-ui, sans-serif"
+                     >
+                        <title>One server, one port — satellites in every room</title>
+                        <!-- Connections -->
+                        <g stroke="#ffb63e" stroke-width="2" stroke-opacity="0.45">
+                           <line x1="400" y1="250" x2="400" y2="70" />
+                           <line x1="400" y1="250" x2="556" y2="160" />
+                           <line x1="400" y1="250" x2="556" y2="340" />
+                           <line x1="400" y1="250" x2="400" y2="430" />
+                           <line x1="400" y1="250" x2="244" y2="340" />
+                           <line x1="400" y1="250" x2="244" y2="160" />
+                        </g>
+                        <!-- Satellite / client nodes -->
+                        <g>
+                           <g>
+                              <rect x="330" y="42" width="140" height="56" rx="8" fill="#1e1e1e" stroke="rgba(255,255,255,0.15)" />
+                              <text x="400" y="66" text-anchor="middle" fill="#eceff1" font-size="16" font-weight="700">Living Room</text>
+                              <text x="400" y="84" text-anchor="middle" fill="#90a4ae" font-size="11">Tier 1 · Raspberry Pi</text>
+                           </g>
+                           <g>
+                              <rect x="486" y="132" width="140" height="56" rx="8" fill="#1e1e1e" stroke="rgba(255,255,255,0.15)" />
+                              <text x="556" y="156" text-anchor="middle" fill="#eceff1" font-size="16" font-weight="700">Kitchen</text>
+                              <text x="556" y="174" text-anchor="middle" fill="#90a4ae" font-size="11">Tier 1 · Raspberry Pi</text>
+                           </g>
+                           <g>
+                              <rect x="486" y="312" width="140" height="56" rx="8" fill="#1e1e1e" stroke="rgba(255,255,255,0.15)" />
+                              <text x="556" y="336" text-anchor="middle" fill="#eceff1" font-size="16" font-weight="700">Office</text>
+                              <text x="556" y="354" text-anchor="middle" fill="#90a4ae" font-size="11">Tier 2 · ESP32</text>
+                           </g>
+                           <g>
+                              <rect x="174" y="312" width="140" height="56" rx="8" fill="#1e1e1e" stroke="rgba(255,255,255,0.15)" />
+                              <text x="244" y="336" text-anchor="middle" fill="#eceff1" font-size="16" font-weight="700">Garage</text>
+                              <text x="244" y="354" text-anchor="middle" fill="#90a4ae" font-size="11">Tier 2 · ESP32</text>
+                           </g>
+                           <g>
+                              <rect x="174" y="132" width="140" height="56" rx="8" fill="#1e1e1e" stroke="rgba(255,255,255,0.15)" />
+                              <text x="244" y="156" text-anchor="middle" fill="#eceff1" font-size="16" font-weight="700">Web Browser</text>
+                              <text x="244" y="174" text-anchor="middle" fill="#90a4ae" font-size="11">WebUI client</text>
+                           </g>
+                           <g>
+                              <rect x="330" y="402" width="140" height="56" rx="8" fill="#1e1e1e" stroke="#35d0f5" stroke-opacity="0.6" stroke-dasharray="5 4" />
+                              <text x="400" y="426" text-anchor="middle" fill="#eceff1" font-size="16" font-weight="700">Mobile App</text>
+                              <text x="400" y="444" text-anchor="middle" fill="#35d0f5" font-size="11">Coming soon</text>
+                           </g>
+                        </g>
+                        <!-- Center: DAWN server -->
+                        <rect x="318" y="214" width="164" height="72" rx="10" fill="#ffb63e" />
+                        <text x="400" y="246" text-anchor="middle" fill="#0d0d0d" font-size="20" font-weight="700">DAWN Server</text>
+                        <text x="400" y="266" text-anchor="middle" fill="#0d0d0d" font-size="11" font-weight="600" opacity="0.85">WebSocket · Port 3000</text>
+                        <!-- Caption -->
+                        <text x="400" y="490" text-anchor="middle" fill="#90a4ae" font-size="13">One server, one port — every satellite, browser, and app connects the same way</text>
+                     </svg>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <!-- Privacy & Performance -->
+         <section class="section">
+            <div class="container">
+               <div class="feature feature--reverse reveal fade-up">
+                  <div class="feature__content">
+                     <span class="feature__label">Privacy</span>
+                     <h2 class="feature__title">Private by Design</h2>
+                     <p class="feature__text">
+                        DAWN runs entirely on your hardware. Speech recognition uses GPU-accelerated Whisper locally. TTS
+                        uses Piper — no cloud calls for voice processing. There is zero telemetry, zero tracking, zero
+                        data collection.
+                     </p>
+                     <ul class="feature__list">
+                        <li>GPU-accelerated Whisper ASR on Jetson (CUDA)</li>
+                        <li>Piper TTS with ONNX Runtime — fully offline voice</li>
+                        <li>Optional fully local LLM via Ollama or llama.cpp</li>
+                        <li>All data stored in local SQLite databases</li>
+                        <li>Encrypted credential storage with libsodium</li>
+                        <li>No telemetry. No analytics. No phone-home.</li>
+                     </ul>
+                  </div>
+                  <div class="feature__visual">
+                     <img
+                        src="assets/images/dawn-jetson.jpg"
+                        alt="NVIDIA Jetson Orin hardware running DAWN on the bench"
+                        style="width: 100%; border-radius: var(--radius-lg); aspect-ratio: 16/9; object-fit: cover"
+                        loading="lazy"
+                     />
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <!-- Hardware Recommendations -->
+         <section class="section section--alt">
+            <div class="container container--narrow">
+               <h2 class="section-title section-title--center reveal fade-up">Recommended Hardware</h2>
+               <p class="section-subtitle section-subtitle--center reveal fade-up">
+                  DAWN runs on a range of hardware, from budget Raspberry Pi to NVIDIA Jetson.
+               </p>
+
+               <div class="spec-table-wrapper reveal fade-up" style="margin-top: var(--space-2xl)">
+                  <table class="spec-table">
+                     <thead>
+                        <tr>
+                           <th scope="col">Platform</th>
+                           <th scope="col">Price</th>
+                           <th scope="col">Role</th>
+                           <th scope="col">Notes</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td class="highlight-cell">Jetson Orin Nano Super</td>
+                           <td>$249</td>
+                           <td><span class="tag tag--primary">Primary</span></td>
+                           <td>Best value. CUDA GPU for Whisper ASR + local LLM</td>
+                        </tr>
+                        <tr>
+                           <td>Jetson Orin NX 16GB</td>
+                           <td>~$1,000</td>
+                           <td><span class="tag tag--secondary">Premium</span></td>
+                           <td>More GPU power for larger local models</td>
+                        </tr>
+                        <tr>
+                           <td>Jetson AGX Orin 64GB</td>
+                           <td>~$2,000</td>
+                           <td><span class="tag tag--secondary">Enthusiast</span></td>
+                           <td>Maximum GPU + RAM for running full-size local LLMs</td>
+                        </tr>
+                        <tr>
+                           <td>Raspberry Pi 5</td>
+                           <td>$125</td>
+                           <td><span class="tag tag--muted">Budget / Satellite</span></td>
+                           <td>No GPU acceleration. Best as Tier 1 satellite</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </section>
+
+         <!-- Getting Started -->
+         <section class="section">
+            <div class="container" style="text-align: center">
+               <h2 class="section-title section-title--center reveal fade-up">Get Started</h2>
+               <p class="section-subtitle section-subtitle--center reveal fade-up">
+                  It's all open under GPLv3. Clone it and follow the setup guide.
+               </p>
+               <div class="reveal fade-up" style="margin-top: var(--space-xl)">
+                  <a
+                     href="https://github.com/The-OASIS-Project/dawn"
+                     class="btn btn--cyan"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     >View on GitHub</a
+                  >
+               </div>
+            </div>
+         </section>
+      </main>
+
+      <div id="footer"></div>
+
+      <script src="js/hud.js"></script>
+      <script src="js/nav.js"></script>
+      <script src="js/components.js"></script>
+      <script src="js/animations.js"></script>
+   </body>
+</html>

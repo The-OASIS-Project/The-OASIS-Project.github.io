@@ -1,0 +1,74 @@
+/* ============================================================
+ * Fonts — self-hosted (no third-party font CDN; privacy-first)
+ *   Hero    : Arame          — MIRAGE's own caps display face (angular, cinematic)
+ *   Display : Aldrich        — MIRAGE's own HUD face (squared, control-panel)
+ *   Body    : Source Sans 3  — the same body face used inside DAWN's WebUI
+ *   Mono    : IBM Plex Mono   — telemetry / HUD readouts / data
+ * ============================================================ */
+
+@font-face {
+   font-family: 'Arame';
+   src: url('../../fonts/arame.woff2') format('woff2');
+   font-weight: 400;
+   font-style: normal;
+   font-display: swap;
+}
+@font-face {
+   font-family: 'Arame';
+   src: url('../../fonts/arame-bold.woff2') format('woff2');
+   font-weight: 700;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: 'Aldrich';
+   src: url('../../fonts/aldrich.woff2') format('woff2');
+   font-weight: 400;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: 'Source Sans 3';
+   src: url('../../fonts/source-sans-3-regular.woff2') format('woff2');
+   font-weight: 400;
+   font-style: normal;
+   font-display: swap;
+}
+@font-face {
+   font-family: 'Source Sans 3';
+   src: url('../../fonts/source-sans-3-medium.woff2') format('woff2');
+   font-weight: 500;
+   font-style: normal;
+   font-display: swap;
+}
+@font-face {
+   font-family: 'Source Sans 3';
+   src: url('../../fonts/source-sans-3-600.woff2') format('woff2');
+   font-weight: 600;
+   font-style: normal;
+   font-display: swap;
+}
+@font-face {
+   font-family: 'Source Sans 3';
+   src: url('../../fonts/source-sans-3-700.woff2') format('woff2');
+   font-weight: 700;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: 'IBM Plex Mono';
+   src: url('../../fonts/ibm-plex-mono-regular.woff2') format('woff2');
+   font-weight: 400;
+   font-style: normal;
+   font-display: swap;
+}
+@font-face {
+   font-family: 'IBM Plex Mono';
+   src: url('../../fonts/ibm-plex-mono-medium.woff2') format('woff2');
+   font-weight: 500;
+   font-style: normal;
+   font-display: swap;
+}
