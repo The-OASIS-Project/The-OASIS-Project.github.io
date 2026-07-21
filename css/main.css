@@ -16,7 +16,6 @@
 
 /* Components */
 @import 'components/hud.css';
-@import 'components/event-banner.css';
 @import 'components/hero.css';
 @import 'components/cards.css';
 @import 'components/feature-sections.css';
